@@ -1,0 +1,80 @@
+3 lines (2).jpg
+3 lines(2).png
+3 srtipes(3).jpg
+3 stripes(3).png
+aeris(4).jpg
+aeris (4).png
+aggression (5).jpg
+aggression (5).png
+ascend (6).jpg
+ascend (6).png
+battle armor (7).jpg
+battle armor.png
+curved (8).jpg
+curved.png
+defy (9).jpg
+defy.png
+diverge (10).jpg
+diverge.png
+edge(11).jpg
+edge.png
+feather.jpg
+feather.png
+fly (13).jpg
+fly.png
+gridlock (14).jpg
+gridlock.png
+guardian (15).jpg
+guardian.png
+hardened (16).jpg
+hardened (16).png
+hex armor (17).jpg
+hex armor.png
+hex core (18).jpg
+hex core.png
+machine blade (19).jpg
+machine blade (19).png
+pacific (20).jpg
+pacific (20).png
+phoenix (21).jpg
+phoenix (21).png
+pinnacle (22).jpg
+pinnacle (22).png
+prime (23).jpg
+prime (23).png
+raijan (24).jpg
+raijan (24).png
+reaction (25).jpg
+reaction (25).png
+renegade (26).jpg
+renegade (26).png
+repression (27).jpg
+repression (27).png
+shield (28).jpg
+shield (28).png
+shredded (29).jpg
+shredded (29).png
+sidepoint (30).jpg
+sidepoint (30).png
+sideways (31).jpg
+sideways (31).png
+solid 1(32).jpg
+solid 1(32).png
+solid 2 (33).jpg
+solid 2 (33).png
+solid 4 (34).jpg
+solid 4 (34).png
+spur (35).jpg
+spur (35).png
+stacked (36).jpg
+stacked (36).png
+stinger (37).jpg
+stinger (37).png
+takedown (38).jpg
+takedown (38).png
+twist (39).jpg
+twist (39).png
+venom (40).jpg
+venom (40).png
+wings (41).jpg
+wings (41).png

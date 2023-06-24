@@ -1,0 +1,27 @@
+agression
+angle 3
+angle
+ascend
+double line
+dounleline 2
+fade
+guardian
+hex armor
+inner drop
+pacific
+peak 1
+peak 2
+prime
+renegade
+rift
+sector
+solid 1
+solid 1-disstressed
+solid 2
+spec 3
+spikes 1
+spikes 2
+swoop
+triple line
+tristar
+venom

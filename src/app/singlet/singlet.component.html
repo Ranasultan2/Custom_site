@@ -1,0 +1,4906 @@
+<div class="section">
+  <ul class="list-group" id="myDiv">
+    <li class="active">
+      <a
+        (click)="design()"
+        [style.background-color]="designActive"
+        class="list-group-item list-group-item-action"
+      >
+        One: Design</a
+      >
+    </li>
+    <li>
+      <a
+        (click)="image()"
+        [style.background-color]="imageActive"
+        class="list-group-item"
+      >
+        Two: Image/Logo</a
+      >
+    </li>
+    <li>
+      <a
+        (click)="text()"
+        [style.background-color]="textActive"
+        class="list-group-item"
+      >
+        Three: Text</a
+      >
+    </li>
+    <li>
+      <a
+        (click)="review()"
+        [style.background-color]="reviewActive"
+        class="list-group-item"
+      >
+        Four: Review</a
+      >
+    </li>
+    <li>
+      <a
+        (click)="submit()"
+        [style.background-color]="submitActive"
+        class="list-group-item"
+      >
+        Submit</a
+      >
+    </li>
+  </ul>
+
+  <button id="btn" (click)="next()">Next</button>
+</div>
+
+<!-- #################### For Design Part ############################ -->
+
+<!-- ------------------------- Row 1 ---------------------  -->
+<div class="row">
+  <!------------------------- Coulmn 1 ------------------->
+  <div class="col-3 column mx-1 col1">
+    <!-- ----------------------- For Bg ---------------------  -->
+    <div class="container" *ngIf="logic == 'design'">
+      <div class="row bg">
+        <div class="bg-color">
+          <div
+            class="btn-group-sm my-1"
+            role="group"
+            aria-label="Basic example"
+          >
+            <h5>Background</h5>
+            <button
+              style="background-color: #039aab"
+              type="button"
+              class="btn btn-dark disabled"
+            >
+              Style:
+            </button>
+            <button
+              style="background-color: #039aab"
+              type="button"
+              class="btn btn-dark"
+              (click)="mainImage('thumbnail')"
+            >
+              {{ thName }}
+            </button>
+          </div>
+          <div
+            class="btn-group-sm my-1"
+            role="group"
+            aria-label="Basic example"
+          >
+            <button
+              style="background-color: #039aab"
+              type="button"
+              class="btn btn-dark disabled"
+            >
+              Color:
+            </button>
+            <button
+              type="button"
+              class="btn btn-light right"
+              (click)="mainImage('color_thumbnail')"
+              [style.filter]="color_thumbnail"
+              [style.backgroundColor]="t_color"
+            ></button>
+          </div>
+        </div>
+      </div>
+      <!-- ----------------------- For --Bg ---------------------  -->
+      <div class="row bg">
+        <div class="bg-color">
+          --Background
+          <div
+            class="btn-group-sm my-1"
+            role="group"
+            aria-label="Basic example"
+          >
+            <button
+              style="background-color: #039aab"
+              type="button"
+              class="btn btn-dark disabled"
+            >
+              Color:
+            </button>
+            <button
+              style="background-color: #039aab"
+              type="button"
+              class="btn btn-dark right"
+              (click)="mainImage('color')"
+              [style.backgroundColor]="color"
+              style="width: 22"
+            ></button>
+          </div>
+        </div>
+      </div>
+      <!-- ----------------------- For Side panel ---------------------  -->
+      <div class="row bg">
+        <div class="bg-color">
+          side panel
+          <div
+            class="btn-group-sm my-1"
+            role="group"
+            aria-label="Basic example"
+          >
+            <button
+              style="background-color: #039aab"
+              type="button"
+              class="btn btn-dark disabled"
+            >
+              Style:
+            </button>
+            <button
+              style="background-color: #039aab"
+              type="button"
+              class="btn btn-dark"
+              (click)="mainImage('side_Panel')"
+            >
+              {{ sName }}
+            </button>
+          </div>
+          <div
+            class="btn-group-sm my-1"
+            role="group"
+            aria-label="Basic example"
+          >
+            <button
+              style="background-color: #039aab"
+              type="button"
+              class="btn btn-dark disabled"
+            >
+              Color:
+            </button>
+            <button
+              style="background-color: #039aab"
+              type="button"
+              class="btn btn-dark right"
+              [style.backgroundColor]="p_color"
+              (click)="mainImage('side_panel_color')"
+            ></button>
+          </div>
+          <div
+            class="btn-group-sm my-1"
+            role="group"
+            aria-label="Basic example"
+          >
+            <button
+              style="background-color: #039aab"
+              type="button"
+              class="btn btn-dark disabled"
+            >
+              Add Highlight:
+            </button>
+            <button
+              style="background-color: #039aab"
+              type="button"
+              class="btn btn-dark"
+            >
+              None
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- ----------------------- For cuff ---------------------  -->
+      <div class="row bg">
+        <div class="bg-color">
+          Cuff
+          <div
+            class="btn-group-sm my-1"
+            role="group"
+            aria-label="Basic example"
+          >
+            <button
+              style="background-color: #039aab"
+              type="button"
+              class="btn btn-dark disabled"
+            >
+              Style:
+            </button>
+            <button
+              style="background-color: #039aab"
+              type="button"
+              (click)="mainImage('cuff')"
+              class="btn btn-dark"
+            >
+              {{ cName }}
+            </button>
+          </div>
+          <div
+            class="btn-group-sm my-1"
+            role="group"
+            aria-label="Basic example"
+          >
+            <button
+              style="background-color: #039aab"
+              type="button"
+              class="btn btn-dark disabled"
+            >
+              Color:
+            </button>
+            <button
+              style="background-color: #039aab"
+              type="button"
+              class="btn btn-dark right"
+              (click)="mainImage('cuff_color')"
+              [style.backgroundColor]="c_color"
+            ></button>
+          </div>
+          <div
+            class="btn-group-sm my-1"
+            role="group"
+            aria-label="Basic example"
+          >
+            <button
+              style="background-color: #039aab"
+              type="button"
+              class="btn btn-dark disabled"
+            >
+              Add Highlight:
+            </button>
+            <button
+              style="background-color: #039aab"
+              type="button"
+              class="btn btn-dark"
+            >
+              None
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- ----------------------- For Piping ---------------------  -->
+      <div class="row bg">
+        <div class="bg-color">
+          piping
+          <div
+            class="btn-group-sm my-1"
+            role="group"
+            aria-label="Basic example"
+          >
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                id="flexCheckDefault"
+                (click)="Piping(pipe)"
+              />
+              <label class="form-check-label" for="flexCheckDefault">
+                Independent color
+              </label>
+            </div>
+            <button
+              style="background-color: #039aab"
+              type="button"
+              class="btn btn-dark disabled"
+            >
+              Add Highlight:
+            </button>
+            <button
+              style="background-color: #039aab"
+              type="button"
+              class="btn btn-dark right"
+              (click)="mainImage('piping')"
+              [style.backgroundColor]="pip_color"
+            ></button>
+          </div>
+        </div>
+      </div>
+      <!-- ----------------------- For InnerThigh ---------------------  -->
+      <div class="row bg">
+        <div class="bg-color">
+          Inner thigh
+          <div
+            class="btn-group-sm my-1"
+            role="group"
+            aria-label="Basic example"
+          >
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                id="flexCheckDefault"
+                (click)="ithigh(thigh)"
+              />
+              <label class="form-check-label" for="flexCheckDefault">
+                Independent color
+              </label>
+            </div>
+
+            <button
+              style="background-color: #039aab"
+              type="button"
+              class="btn btn-dark disabled"
+            >
+              Add Highlight:
+            </button>
+            <button
+              style="background-color: #039aab"
+              type="button"
+              class="btn btn-dark right"
+              (click)="mainImage('thigh')"
+              [style.backgroundColor]="Thigh_color"
+            ></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- #################### For Image Part ############################ -->
+
+    <div class="container" *ngIf="logic == 'image'">
+      <div class="images">
+        <h6>images</h6>
+        <div class="file-upload">
+          <button class="file-upload-btn" type="button" (click)="get()">
+            Add Image
+          </button>
+
+          <div class="image-upload-wrap">
+            <input
+              class="file-upload-input"
+              type="file"
+              (change)="file($event)"
+            />
+            <div class="drag-text">
+              <h3>Drag and drop a file or select add Image</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="--background">
+        <label for="customRange3" class="form-label">Example range</label>
+        <input
+          type="range"
+          class="form-range"
+          min="0  "
+          max="800"
+          step="0.5"
+          id="customRange3"
+          [(ngModel)]="n"
+          (input)="onRangeChange(n)"
+        />
+      </div>
+    </div>
+    <!-- #################### For Text Part ############################ -->
+
+    <div class="container" *ngIf="logic == 'text'">
+      <div class="background">
+        <h5>text</h5>
+        <input type="text" [(ngModel)]="Text" />
+        <label for="customRange3" class="form-label">Example range</label>
+        <input
+          type="range"
+          class="form-range"
+          min="30"
+          max="800"
+          step="0.5"
+          id="customRange3"
+          [(ngModel)]="text_range"
+          (input)="textRangeChange(text_range)"
+        />
+      </div>
+    </div>
+    <!-- #################### For Review Part ############################ -->
+
+    <div class="container" *ngIf="logic == 'review'">
+      <div class="background" style="margin-top: 30px">
+        <h5 style="color: #039aab">Review Instructions:</h5>
+        Before we process your order we will have some questions for you. So
+        don't worry if the design needs a finishing touch, we can flush out the
+        details with your help.
+        <br />
+        <br />
+        After reviewing the design as it appears to the right, please add
+        comments on the next tab to help us better realize your vision.
+      </div>
+    </div>
+
+    <!-- #################### For Submit Part ############################ -->
+
+    <div class="container" *ngIf="logic == 'submit'">
+      <div class="background">
+        <h1 style="margin-top: 40px">On Working...</h1>
+      </div>
+    </div>
+  </div>
+
+  <!-- <!######### Coulmn 2 working on main image  ##################> -->
+  <!-- ############################ MAIN IMAGES ALL #####################  -->
+  <div
+    class="col-8 column mx-2 col2"
+    [style.display]="imageDp"
+    [style.backgroundColor]="color"
+    style="z-index: 1"
+  >
+    <div class="slide">
+      <button
+        style="background-color: #039aab"
+        style="z-index: 13"
+        type="button"
+        class="btn btn-secondary"
+        (click)="side(slide)"
+      >
+        Slide
+      </button>
+    </div>
+    <!-- // For image  -->
+    <div class="img">
+      <img
+        *ngIf="fileUrl"
+        style="
+          position: absolute;
+          z-index: 10;
+          left: 120px;
+          top: 251px;
+
+          cursor: pointer;
+        "
+        class="MAIN"
+        [style.marginTop]="slide + 'px'"
+        [style.width.px]="n"
+        [style.height.px]="n"
+        [src]="fileUrl"
+        alt=""
+        (click)="test()"
+      />
+
+
+    </div>
+    <!-- // For Text  -->
+    <div
+      style="
+        position: absolute;
+        z-index: 11;
+        left: 120px;
+        top: 251px;
+        cursor: pointer;
+      "
+      class="MAIN"
+      [style.marginTop]="slide + 'px'"
+      [style.font-size.px]="text_range"
+    >
+      {{ Text }}
+    </div>
+    <img
+      style="position: absolute; z-index: 2"
+      [style.filter]="cthumb"
+      class="thumbnail_Image"
+      id="thumb_color"
+      [style.marginTop]="slide + 'px'"
+      [src]="thumbNail"
+    />
+
+    <img
+      style="
+        position: absolute;
+        z-index: 12;
+        overflow: hidden;
+        pointer-events: none;
+      "
+      class="MAIN-IMAGE"
+      [style.marginTop]="slide + 'px'"
+      src="../../assets/image/do.png"
+      alt=""
+    />
+
+    <!-- // for side panel -->
+    <img
+      style="position: absolute; z-index: 6"
+      class="MAIN"
+      [style.marginTop]="slide + 'px'"
+      [src]="sidePanelUrl"
+      [style.filter]="sidePanelColor"
+      alt=""
+    />
+    <img
+      style="position: absolute; z-index: 7"
+      class="MAIN"
+      [style.marginTop]="slide + 'px'"
+      [src]="cuffUrl"
+      [style.filter]="cuffColor"
+      alt=""
+    />
+    <img
+      *ngIf="pipe == true"
+      style="position: absolute; z-index: 9"
+      class="MAIN"
+      [style.marginTop]="slide + 'px'"
+      [style.filter]="pipingColor"
+      src="../../assets/image/singlet/front back canvas design image/pipping image design.png"
+      alt=""
+    />
+    <img
+      *ngIf="thigh == true"
+      style="position: absolute; z-index: 8"
+      class="MAIN"
+      [style.marginTop]="slide + 'px'"
+      [style.filter]="innerThighColor"
+      src="../../assets/image/singlet/front back canvas design image/inner thign image.png"
+      alt=""
+    />
+  </div>
+
+  <!-- ----------------------- For Bg ---------------------  -->
+  <!-- ################### color display #################  -->
+  <div class="col-8 column mx-2 col3" [style.display]="colorDp">
+    <div id="clrList" class="flex">
+      <a
+        style="background-color: #000000; color: #ffffff"
+        (click)="updateColorDp('#000000')"
+        data-name="Black"
+        class="ui-link"
+        #myAnchor
+        >Black</a
+      ><a
+        style="background-color: #ffffff; color: #000000"
+        (click)="updateColorDp('#ffffff')"
+        data-name="White"
+        class="ui-link"
+        #myAnchor
+        >White</a
+      ><a
+        style="background-color: #414042; color: #ffffff"
+        (click)="updateColorDp('#414042')"
+        data-name="Char-Gray"
+        class="ui-link"
+        #myAnchor
+        >Dark Gray</a
+      ><a
+        style="background-color: #939598; color: #ffffff"
+        (click)="updateColorDp('#939598')"
+        data-name="Gray"
+        class="ui-link"
+        #myAnchor
+        >Gray</a
+      ><a
+        style="background-color: #c7c8ca; color: #000000"
+        (click)="updateColorDp('#c7c8ca')"
+        data-name="Silver"
+        class="ui-link"
+        #myAnchor
+        >Silver</a
+      ><a
+        style="background-color: #cf0a2c; color: #ffffff"
+        (click)="updateColorDp('#cf0a2c')"
+        data-name="Bright-Red"
+        class="ui-link"
+        #myAnchor
+        >Bright Red</a
+      ><a
+        style="background-color: #ac162c; color: #ffffff"
+        (click)="updateColorDp('#ac162c')"
+        data-name="Red"
+        class="ui-link"
+        #myAnchor
+        >Red</a
+      ><a
+        style="background-color: #7a232e; color: #ffffff"
+        (click)="updateColorDp('#7a232e')"
+        data-name="Maroon"
+        class="ui-link"
+        #myAnchor
+        >Maroon</a
+      ><a
+        style="background-color: #6a1b32; color: #ffffff"
+        (click)="updateColorDp('#6a1b32')"
+        data-name="Dark-Maroon"
+        class="ui-link"
+        #myAnchor
+        >Dark Maroon</a
+      ><a
+        style="background-color: #a41f35; color: #ffffff"
+        (click)="updateColorDp('#a41f35')"
+        data-name="Cardinal-Red"
+        class="ui-link"
+        #myAnchor
+        >Cardinal Red</a
+      ><a
+        style="background-color: #c12033; color: #ffffff"
+        (click)="updateColorDp('#c12033')"
+        class="lesspad ui-link"
+        #myAnchor
+        data-name="Scarlet-Red"
+        >Scarlet Red (Ohio State)</a
+      ><a
+        style="background-color: #ef3824; color: #ffffff"
+        (click)="updateColorDp('#ef3824')"
+        data-name="RedOrange"
+        class="ui-link"
+        #myAnchor
+        >Red Orange</a
+      ><a
+        style="background-color: #ff4717; color: #ffffff"
+        (click)="updateColorDp('#ff4717')"
+        data-name="Orange"
+        class="ui-link"
+        #myAnchor
+        >Bright Orange</a
+      ><a
+        style="background-color: #ff8300; color: #ffffff"
+        (click)="updateColorDp('#ff8300')"
+        data-name="NewOrange"
+        class="ui-link"
+        #myAnchor
+        >Orange</a
+      ><a
+        style="background-color: #d15e14; color: #ffffff"
+        (click)="updateColorDp('#d15e14')"
+        class="lesspad ui-link"
+        #myAnchor
+        data-name="Texas-Orange"
+        >Burnt Orange (Texas Orange)</a
+      ><a
+        style="background-color: #ece83a; color: #000000"
+        (click)="updateColorDp('#ece83a')"
+        data-name="NeonYellow"
+        class="ui-link"
+        #myAnchor
+        >Neon Yellow</a
+      ><a
+        style="background-color: #ffdd00; color: #000000"
+        (click)="updateColorDp('#ffdd00')"
+        data-name="Yellow"
+        class="ui-link"
+        #myAnchor
+        >Yellow</a
+      ><a
+        style="background-color: #ffc627; color: #ffffff"
+        (click)="updateColorDp('#ffc627')"
+        data-name="Athletic-Gold"
+        class="ui-link"
+        #myAnchor
+        >Athletic Gold</a
+      ><a
+        style="background-color: #eba900; color: #ffffff"
+        (click)="updateColorDp('#eba900')"
+        data-name="Athletic-Gold-Dark"
+        class="ui-link"
+        #myAnchor
+        >Athletic Gold (Dark)</a
+      ><a
+        style="background-color: #77bc1f; color: #ffffff"
+        (click)="updateColorDp('#77bc1f')"
+        data-name="Bright-Green"
+        class="ui-link"
+        #myAnchor
+        >Bright Green</a
+      ><a
+        style="background-color: #50b848; color: #ffffff"
+        (click)="updateColorDp('#50b848')"
+        data-name="Grass-Green"
+        class="ui-link"
+        #myAnchor
+        >Grass Green</a
+      ><a
+        style="background-color: #00833e; color: #ffffff"
+        (click)="updateColorDp('#00833e')"
+        data-name="Kelly-Green"
+        class="ui-link"
+        #myAnchor
+        >Kelly Green</a
+      ><a
+        style="background-color: #0e553f; color: #ffffff"
+        (click)="updateColorDp('#0e553f')"
+        data-name="Forest-Green"
+        class="ui-link"
+        #myAnchor
+        >Forest Green</a
+      ><a
+        style="background-color: #124734; color: #ffffff"
+        (click)="updateColorDp('#124734')"
+        data-name="Hunter-Green"
+        class="ui-link"
+        #myAnchor
+        >Hunter Green</a
+      ><a
+        style="background-color: #4e5a30; color: #ffffff"
+        (click)="updateColorDp('#4e5a30')"
+        data-name="Military-Green"
+        class="ui-link"
+        #myAnchor
+        >Army Green</a
+      ><a
+        style="background-color: #00665e; color: #ffffff"
+        (click)="updateColorDp('#00665e')"
+        data-name="Teal"
+        class="ui-link"
+        #myAnchor
+        >Teal</a
+      ><a
+        style="background-color: #00afaa; color: #ffffff"
+        (click)="updateColorDp('#00afaa')"
+        data-name="Turquoise"
+        class="ui-link"
+        #myAnchor
+        >Turquoise</a
+      ><a
+        style="background-color: #6ecb98; color: #ffffff"
+        (click)="updateColorDp('#6ecb98')"
+        data-name="Sea-Green"
+        class="ui-link"
+        #myAnchor
+        >Sea Green</a
+      ><a
+        style="background-color: #8db8e9; color: #ffffff"
+        (click)="updateColorDp('#8db8e9')"
+        data-name="Carolina-Blue"
+        class="ui-link"
+        #myAnchor
+        >Carolina Blue</a
+      ><a
+        style="background-color: #00a7e1; color: #ffffff"
+        (click)="updateColorDp('#00a7e1')"
+        data-name="Cyan"
+        class="ui-link"
+        #myAnchor
+        >Cyan</a
+      ><a
+        style="background-color: #0082be; color: #ffffff"
+        (click)="updateColorDp('#0082be')"
+        data-name="Bright-Blue"
+        class="ui-link"
+        #myAnchor
+        >Bright Blue</a
+      ><a
+        style="background-color: #0039a6; color: #ffffff"
+        (click)="updateColorDp('#0039a6')"
+        data-name="Royal-Blue"
+        class="ui-link"
+        #myAnchor
+        >Royal Blue</a
+      ><a
+        style="background-color: #002d74; color: #ffffff"
+        (click)="updateColorDp('#002d74')"
+        data-name="Royal-Blue-Dark"
+        class="ui-link"
+        #myAnchor
+        >Royal Blue (Dark)</a
+      ><a
+        style="background-color: #002144; color: #ffffff"
+        (click)="updateColorDp('#002144')"
+        data-name="Navy-Blue"
+        class="ui-link"
+        #myAnchor
+        >Navy Blue</a
+      ><a
+        style="background-color: #333e48; color: #ffffff"
+        (click)="updateColorDp('#333e48')"
+        data-name="Gunmetal-Blue"
+        class="ui-link"
+        #myAnchor
+        >Gunmetal Blue</a
+      ><a
+        style="background-color: #9164cc; color: #ffffff"
+        (click)="updateColorDp('#9164cc')"
+        data-name="Light-Purple"
+        class="ui-link"
+        #myAnchor
+        >Light Purple</a
+      ><a
+        style="background-color: #5b2d82; color: #ffffff"
+        (click)="updateColorDp('#5b2d82')"
+        data-name="Purple"
+        class="ui-link"
+        #myAnchor
+        >Purple</a
+      ><a
+        style="background-color: #43235f; color: #ffffff"
+        (click)="updateColorDp('#43235f')"
+        data-name="Dk-Purple"
+        class="ui-link"
+        #myAnchor
+        >Dark Purple</a
+      ><a
+        style="background-color: #a98c3d; color: #ffffff"
+        (click)="updateColorDp('#a98c3d')"
+        data-name="Old-Gold"
+        class="ui-link"
+        #myAnchor
+        >Old Gold</a
+      ><a
+        style="background-color: #cfae7b; color: #ffffff"
+        (click)="updateColorDp('#cfae7b')"
+        data-name="Vegas-Gold"
+        class="ui-link"
+        #myAnchor
+        >Vegas Gold</a
+      ><a
+        style="background-color: #cfc393; color: #ffffff"
+        (click)="updateColorDp('#cfc393')"
+        class="lesspad ui-link"
+        #myAnchor
+        data-name="Vegas-Gold-Pitt"
+        >Vegas Gold (Light)</a
+      ><a
+        style="background-color: #e2d0a6; color: #000000"
+        (click)="updateColorDp('#e2d0a6')"
+        data-name="Neutral"
+        class="ui-link"
+        #myAnchor
+        >Neutral</a
+      ><a
+        style="background-color: #b07c57; color: #ffffff"
+        (click)="updateColorDp('#b07c57')"
+        data-name="Light-Brown"
+        class="ui-link"
+        #myAnchor
+        >Light Brown</a
+      ><a
+        style="background-color: #753d29; color: #ffffff"
+        (click)="updateColorDp('#753d29')"
+        data-name="Brown"
+        class="ui-link"
+        #myAnchor
+        >Brown</a
+      ><a
+        style="background-color: #4b3d2a; color: #ffffff"
+        (click)="updateColorDp('#4b3d2a')"
+        data-name="Dark-Brown"
+        class="ui-link"
+        #myAnchor
+        >Dark Brown</a
+      ><a
+        style="background-color: #ed80a8; color: #ffffff"
+        (click)="updateColorDp('#ed80a8')"
+        data-name="Pink"
+        class="ui-link"
+        #myAnchor
+        >Pink</a
+      ><a
+        style="background-color: #d50071; color: #ffffff"
+        (click)="updateColorDp('#d50071')"
+        data-name="Fuchsia"
+        class="ui-link"
+        #myAnchor
+        >Hot Pink</a
+      ><a
+        style="background-color: #b94197; color: #ffffff"
+        (click)="updateColorDp('#b94197')"
+        data-name="Magenta"
+        class="ui-link"
+        #myAnchor
+        >Magenta</a
+      >
+    </div>
+  </div>
+
+  <!-- ####################### Thumbnail #####################  -->
+  <div
+    class="col-8 column mx-2 col-3"
+    [style.display]="thumbnail"
+    width="700px"
+  >
+    <div id="clrList" class="flexb">
+      <a
+        style="width: 120px; height: 230px"
+        (click)="
+          imageUrl(
+            'solid',
+            '../../assets/image/singlet/background styles/(1) solid.png'
+          )
+        "
+        ><img src="../../assets/image/singlet/background styles/(1) solid.jpg"
+      /></a>
+      <a
+        style="width: 120px; height: 230px"
+        (click)="
+          imageUrl(
+            'aggression',
+            '../../assets/image/singlet/background styles/aggression(3).png'
+          )
+        "
+        ><img
+          src="../../assets/image/singlet/background styles/aggression(3).jpg"
+      /></a>
+      <a
+        style="width: 120px; height: 230px"
+        (click)="
+          imageUrl(
+            'ascend',
+            '../../assets/image/singlet/background styles/ascend(2).png'
+          )
+        "
+        ><img src="../../assets/image/singlet/background styles/ascend(2).jpg"
+      /></a>
+      <a
+        style="width: 120px; height: 230px"
+        (click)="
+          imageUrl(
+            'brazen',
+            '../../assets/image/singlet/background styles/brazen(4).png'
+          )
+        "
+        ><img src="../../assets/image/singlet/background styles/brazen(4).jpg"
+      /></a>
+      <a
+        style="width: 120px; height: 230px"
+        (click)="
+          imageUrl(
+            'diamond palet ',
+            '../../assets/image/singlet/background styles/diamond pallet(5).png'
+          )
+        "
+        ><img
+          src="../../assets/image/singlet/background styles/diamond palet (5).jpg"
+      /></a>
+      <a
+        style="width: 120px; height: 230px"
+        (click)="
+          imageUrl(
+            'digital camo lg ',
+            '../../assets/image/singlet/background styles/digital camo-lg(6).png'
+          )
+        "
+        ><img
+          src="../../assets/image/singlet/background styles/digital camo lg (6).jpg"
+      /></a>
+      <a
+        style="width: 120px; height: 230px"
+        (click)="
+          imageUrl(
+            'dimentions ',
+            '../../assets/image/singlet/background styles/dimentions(7).png'
+          )
+        "
+        ><img
+          src="../../assets/image/singlet/background styles/dimentions (7).jpg"
+      /></a>
+      <a
+        style="width: 120px; height: 230px"
+        (click)="
+          imageUrl(
+            'distressed',
+            '../../assets/image/singlet/background styles/distressed(8).png'
+          )
+        "
+        ><img
+          src="../../assets/image/singlet/background styles/distressed(8).jpg"
+      /></a>
+      <a
+        style="width: 120px; height: 230px"
+        (click)="
+          imageUrl(
+            'emerg ',
+            '../../assets/image/singlet/background styles/emerg(9).png'
+          )
+        "
+        ><img src="../../assets/image/singlet/background styles/emerg (9).jpg"
+      /></a>
+      <a
+        style="width: 120px; height: 230px"
+        (click)="
+          imageUrl(
+            'fade 150',
+            '../../assets/image/singlet/background styles/fade 150.png'
+          )
+        "
+        ><img
+          src="../../assets/image/singlet/background styles/fade 150(10).jpg"
+      /></a>
+      <a
+        style="width: 120px; height: 230px"
+        (click)="
+          imageUrl(
+            'fade slash ',
+            '../../assets/image/singlet/background styles/fade slash.png'
+          )
+        "
+        ><img
+          src="../../assets/image/singlet/background styles/fade slash (11).jpg"
+      /></a>
+      <a
+        style="width: 120px; height: 230px"
+        (click)="
+          imageUrl(
+            'fade top ',
+            '../../assets/image/singlet/background styles/fade top.png'
+          )
+        "
+        ><img
+          src="../../assets/image/singlet/background styles/fade top (12).jpg"
+      /></a>
+      <a
+        style="width: 120px; height: 230px"
+        (click)="
+          imageUrl(
+            'guardian ',
+            '../../assets/image/singlet/background styles/guardian.png'
+          )
+        "
+        ><img
+          src="../../assets/image/singlet/background styles/guardian (13).jpg"
+      /></a>
+      <a
+        style="width: 120px; height: 230px"
+        (click)="
+          imageUrl(
+            'hardcore ',
+            '../../assets/image/singlet/background styles/hardcore.png'
+          )
+        "
+        ><img
+          src="../../assets/image/singlet/background styles/hardcore (14).jpg"
+      /></a>
+      <a
+        style="width: 120px; height: 230px"
+        (click)="
+          imageUrl(
+            'hex armor ',
+            '../../assets/image/singlet/background styles/Hex armor.png'
+          )
+        "
+        ><img
+          src="../../assets/image/singlet/background styles/hex armor (15).jpg"
+      /></a>
+      <a
+        style="width: 120px; height: 230px"
+        (click)="
+          imageUrl(
+            'highline ',
+            '../../assets/image/singlet/background styles/highline.png'
+          )
+        "
+        ><img
+          src="../../assets/image/singlet/background styles/highline (16).jpg"
+      /></a>
+      <a
+        style="width: 120px; height: 230px"
+        (click)="
+          imageUrl(
+            'infliction',
+            '../../assets/image/singlet/background styles/infliction.png'
+          )
+        "
+        ><img
+          src="../../assets/image/singlet/background styles/infliction(16).jpg"
+      /></a>
+      <a
+        style="width: 120px; height: 230px"
+        (click)="
+          imageUrl(
+            'legacy ',
+            '../../assets/image/singlet/background styles/legacy.png'
+          )
+        "
+        ><img
+          src="../../assets/image/singlet/background styles/legacy (17).jpg"
+      /></a>
+      <a
+        style="width: 120px; height: 230px"
+        (click)="
+          imageUrl(
+            'NK2',
+            '../../assets/image/singlet/background styles/NK2.png'
+          )
+        "
+        ><img src="../../assets/image/singlet/background styles/NK2(18).jpg"
+      /></a>
+      <a
+        style="width: 120px; height: 230px"
+        (click)="
+          imageUrl(
+            'pacific',
+            '../../assets/image/singlet/background styles/pacific.png'
+          )
+        "
+        ><img
+          src="../../assets/image/singlet/background styles/pacific(19).jpg"
+      /></a>
+      <a
+        style="width: 120px; height: 230px"
+        (click)="
+          imageUrl(
+            'patriotic ',
+            '../../assets/image/singlet/background styles/patriotic (22).png'
+          )
+        "
+        ><img
+          src="../../assets/image/singlet/background styles/patriotic (22).jpg"
+      /></a>
+      <a
+        style="width: 120px; height: 230px"
+        (click)="
+          imageUrl(
+            'patriotic 2 ',
+            '../../assets/image/singlet/background styles/patriotic 2.png'
+          )
+        "
+        ><img
+          src="../../assets/image/singlet/background styles/patriotic 2 (20).jpg"
+      /></a>
+      <a
+        style="width: 120px; height: 230px"
+        (click)="
+          imageUrl(
+            'patriotic 4 ',
+            '../../assets/image/singlet/background styles/patriotic 4.png'
+          )
+        "
+        ><img
+          src="../../assets/image/singlet/background styles/patriotic 4 (21).jpg"
+      /></a>
+      <a
+        style="width: 120px; height: 230px"
+        (click)="
+          imageUrl(
+            'prime ',
+            '../../assets/image/singlet/background styles/prime.png'
+          )
+        "
+        ><img src="../../assets/image/singlet/background styles/prime (23).jpg"
+      /></a>
+      <a
+        style="width: 120px; height: 230px"
+        (click)="
+          imageUrl(
+            'quantam ',
+            '../../assets/image/singlet/background styles/quantam.png'
+          )
+        "
+        ><img
+          src="../../assets/image/singlet/background styles/quantam (24).jpg"
+      /></a>
+      <a
+        style="width: 120px; height: 230px"
+        (click)="
+          imageUrl(
+            'renegade ',
+            '../../assets/image/singlet/background styles/renegade.png'
+          )
+        "
+        ><img
+          src="../../assets/image/singlet/background styles/renegade (25).jpg"
+      /></a>
+      <a
+        style="width: 120px; height: 230px"
+        (click)="
+          imageUrl(
+            'rockland',
+            '../../assets/image/singlet/background styles/rockland.png'
+          )
+        "
+        ><img
+          src="../../assets/image/singlet/background styles/rockland(26).jpg"
+      /></a>
+      <a
+        style="width: 120px; height: 230px"
+        (click)="
+          imageUrl(
+            'scribbles ',
+            '../../assets/image/singlet/background styles/scribbles.png'
+          )
+        "
+        ><img
+          src="../../assets/image/singlet/background styles/scribbles (27).jpg"
+      /></a>
+      <a
+        style="width: 120px; height: 230px"
+        (click)="
+          imageUrl(
+            'sector 1  ',
+            '../../assets/image/singlet/background styles/sector 1.png'
+          )
+        "
+        ><img
+          src="../../assets/image/singlet/background styles/sector 1 (28).jpg"
+      /></a>
+      <a
+        style="width: 120px; height: 230px"
+        (click)="
+          imageUrl(
+            'splatter ',
+            '../../assets/image/singlet/background styles/splatter.png'
+          )
+        "
+        ><img
+          src="../../assets/image/singlet/background styles/splatter (30).jpg"
+      /></a>
+      <a
+        style="width: 120px; height: 230px"
+        (click)="
+          imageUrl(
+            'swirline 3 ',
+            '../../assets/image/singlet/background styles/swirlline 3.png'
+          )
+        "
+        ><img
+          src="../../assets/image/singlet/background styles/swirline 3 (31).jpg"
+      /></a>
+      <a
+        style="width: 120px; height: 230px"
+        (click)="
+          imageUrl(
+            'swriline 2 ',
+            '../../assets/image/singlet/background styles/swrilline 2.png'
+          )
+        "
+        ><img
+          src="../../assets/image/singlet/background styles/swriline 2 (32).jpg"
+      /></a>
+      <a
+        style="width: 120px; height: 230px"
+        (click)="
+          imageUrl(
+            'tech 5 ',
+            '../../assets/image/singlet/background styles/tech 5.png'
+          )
+        "
+        ><img
+          src="../../assets/image/singlet/background styles/tech 5 (33).jpg"
+      /></a>
+      <a
+        style="width: 120px; height: 230px"
+        (click)="
+          imageUrl(
+            'tread ',
+            '../../assets/image/singlet/background styles/tread.png'
+          )
+        "
+        ><img src="../../assets/image/singlet/background styles/tread (34).jpg"
+      /></a>
+      <a
+        style="width: 120px; height: 230px"
+        (click)="
+          imageUrl(
+            'trifade ',
+            '../../assets/image/singlet/background styles/trifade.png'
+          )
+        "
+        ><img
+          src="../../assets/image/singlet/background styles/trifade (35).jpg"
+      /></a>
+      <a
+        style="width: 120px; height: 230px"
+        (click)="
+          imageUrl(
+            'venom ',
+            '../../assets/image/singlet/background styles/venom.png'
+          )
+        "
+        ><img src="../../assets/image/singlet/background styles/venom (37).jpg"
+      /></a>
+      <a
+        style="width: 120px; height: 230px"
+        (click)="
+          imageUrl(
+            'ventus ',
+            '../../assets/image/singlet/background styles/ventus.png'
+          )
+        "
+        ><img
+          src="../../assets/image/singlet/background styles/ventus (36).jpg"
+      /></a>
+    </div>
+  </div>
+
+  <!-- ############################## thumbnail color ########################  -->
+  <div class="col-8 column mx-2 col3" [style.display]="color_thumbnail">
+    <div id="clrList" class="flex">
+      <a
+        style="background-color: #000000"
+        (click)="
+          updateThumbnailColor('#000000', 'brightness(0) saturate(100%)')
+        "
+        data-name="Black"
+        class="ui-link"
+        #myAnchor
+        >Black</a
+      ><a
+        style="background-color: #ffffff; color: #000000"
+        (click)="
+          updateThumbnailColor(
+            '#ffffff',
+            'brightness(0) saturate(100%) invert(92%) sepia(47%) saturate(17%) hue-rotate(296deg) brightness(107%) contrast(100%) '
+          )
+        "
+        data-name="White"
+        class="ui-link"
+        #myAnchor
+        >White</a
+      ><a
+        style="background-color: #414042; color: #ffffff"
+        (click)="
+          updateThumbnailColor(
+            '#939598',
+            ' brightness(96%) invert(37%) sepia(5%) saturate(169%) hue-rotate(182deg)  contrast(90%)'
+          )
+        "
+        data-name="Char-Gray"
+        class="ui-link"
+        #myAnchor
+        >Dark Gray</a
+      ><a
+        style="background-color: #939598; color: #ffffff"
+        (click)="
+          updateThumbnailColor(
+            '#414042',
+            ' brightness(89%) invert(77%) sepia(6%) saturate(232%) hue-rotate(224deg)  contrast(86%)'
+          )
+        "
+        data-name="Gray"
+        class="ui-link"
+        #myAnchor
+        >Gray</a
+      ><a
+        style="background-color: #c7c8ca; color: #000000"
+        (click)="
+          updateThumbnailColor(
+            '#c7c8ca',
+            ' brightness(99%) invert(18%) sepia(0%) saturate(2697%) hue-rotate(287deg)  contrast(88%)'
+          )
+        "
+        data-name="Silver"
+        class="ui-link"
+        #myAnchor
+        >Silver</a
+      ><a
+        style="background-color: #cf0a2c; color: #ffffff"
+        (click)="
+          updateThumbnailColor(
+            '#cf0a2c',
+            ' brightness(0) saturate(100%) invert(21%) sepia(58%) saturate(5843%) hue-rotate(334deg) brightness(74%) contrast(131%)'
+          )
+        "
+        data-name="Bright-Red"
+        class="ui-link"
+        #myAnchor
+        >Bright Red</a
+      ><a
+        style="background-color: #ac162c; color: #ffffff"
+        (click)="
+          updateThumbnailColor(
+            '#ac162c',
+            ' brightness(0) saturate(100%) invert(24%) sepia(40%) saturate(3446%) hue-rotate(328deg) brightness(79%) contrast(112%)'
+          )
+        "
+        data-name="Red"
+        class="ui-link"
+        #myAnchor
+        >Red</a
+      ><a
+        style="background-color: #7a232e; color: #ffffff"
+        (click)="
+          updateThumbnailColor(
+            '#7a232e',
+            ' brightness(0) saturate(100%) invert(15%) sepia(26%) saturate(5403%) hue-rotate(331deg) brightness(95%) contrast(89%)'
+          )
+        "
+        data-name="Maroon"
+        class="ui-link"
+        #myAnchor
+        >Maroon</a
+      ><a
+        style="background-color: #6a1b32; color: #ffffff"
+        (click)="
+          updateThumbnailColor(
+            '#6a1b32',
+            ' brightness(0) saturate(100%) invert(12%) sepia(69%) saturate(2082%) hue-rotate(318deg) brightness(100%) contrast(93%)'
+          )
+        "
+        data-name="Dark-Maroon"
+        class="ui-link"
+        #myAnchor
+        >Dark Maroon</a
+      ><a
+        style="background-color: #a41f35; color: #ffffff"
+        (click)="
+          updateThumbnailColor(
+            '#a41f35',
+            ' brightness(0) saturate(100%) invert(16%) sepia(60%) saturate(3578%) hue-rotate(334deg) brightness(91%) contrast(93%)'
+          )
+        "
+        data-name="Cardinal-Red"
+        class="ui-link"
+        #myAnchor
+        >Cardinal Red</a
+      ><a
+        style="background-color: #c12033; color: #ffffff"
+        (click)="
+          updateThumbnailColor(
+            '#c12033',
+            ' brightness(0) saturate(100%) invert(18%) sepia(60%) saturate(2494%) hue-rotate(331deg) brightness(113%) contrast(105%)'
+          )
+        "
+        class="lesspad ui-link"
+        #myAnchor
+        data-name="Scarlet-Red"
+        >Scarlet Red (Ohio State)</a
+      ><a
+        style="background-color: #ef3824; color: #ffffff"
+        (click)="
+          updateThumbnailColor(
+            '#ef3824',
+            ' brightness(0) saturate(100%) invert(27%) sepia(81%) saturate(4940%) hue-rotate(351deg) brightness(108%) contrast(87%)'
+          )
+        "
+        data-name="RedOrange"
+        class="ui-link"
+        #myAnchor
+        >Red Orange</a
+      ><a
+        style="background-color: #ff4717; color: #ffffff"
+        (click)="
+          updateThumbnailColor(
+            '#ff4717',
+            ' brightness(0) saturate(100%) invert(35%) sepia(69%) saturate(3651%) hue-rotate(351deg) brightness(107%) contrast(103%)'
+          )
+        "
+        data-name="Orange"
+        class="ui-link"
+        #myAnchor
+        >Bright Orange</a
+      ><a
+        style="background-color: #ff8300; color: #ffffff"
+        (click)="
+          updateThumbnailColor(
+            '#ff8300',
+            ' brightness(0) saturate(100%) invert(57%) sepia(93%) saturate(2608%) hue-rotate(359deg) brightness(101%) contrast(107%)'
+          )
+        "
+        data-name="NewOrange"
+        class="ui-link"
+        #myAnchor
+        >Orange</a
+      ><a
+        style="background-color: #d15e14; color: #ffffff"
+        (click)="
+          updateThumbnailColor(
+            '#d15e14',
+            ' brightness(0) saturate(100%) invert(37%) sepia(93%) saturate(865%) hue-rotate(354deg) brightness(94%) contrast(92%)'
+          )
+        "
+        class="lesspad ui-link"
+        #myAnchor
+        data-name="Texas-Orange"
+        >Burnt Orange (Texas Orange)</a
+      ><a
+        style="background-color: #ece83a; color: #000000"
+        (click)="
+          updateThumbnailColor(
+            '#ece83a',
+            ' brightness(0) saturate(100%) invert(91%) sepia(45%) saturate(751%) hue-rotate(356deg) brightness(96%) contrast(92%)'
+          )
+        "
+        data-name="NeonYellow"
+        class="ui-link"
+        #myAnchor
+        >Neon Yellow</a
+      ><a
+        style="background-color: #ffdd00; color: #000000"
+        (click)="
+          updateThumbnailColor(
+            '#ffdd00',
+            ' brightness(0) saturate(100%) invert(71%) sepia(94%) saturate(559%) hue-rotate(360deg) brightness(107%) contrast(103%)'
+          )
+        "
+        data-name="Yellow"
+        class="ui-link"
+        #myAnchor
+        >Yellow</a
+      ><a
+        style="background-color: #ffc627; color: #ffffff"
+        (click)="
+          updateThumbnailColor(
+            '#ffc627',
+            ' brightness(0) saturate(100%) invert(84%) sepia(93%) saturate(2984%) hue-rotate(327deg) brightness(98%) contrast(105%)'
+          )
+        "
+        data-name="Athletic-Gold"
+        class="ui-link"
+        #myAnchor
+        >Athletic Gold</a
+      ><a
+        style="background-color: #eba900; color: #ffffff"
+        (click)="
+          updateThumbnailColor(
+            '#eba900',
+            ' brightness(0) saturate(100%) invert(50%) sepia(92%) saturate(604%) hue-rotate(11deg) brightness(108%) contrast(101%)'
+          )
+        "
+        data-name="Athletic-Gold-Dark"
+        class="ui-link"
+        #myAnchor
+        >Athletic Gold (Dark)</a
+      ><a
+        style="background-color: #77bc1f; color: #ffffff"
+        (click)="
+          updateThumbnailColor(
+            '#77bc1f',
+            ' brightness(0) saturate(100%) invert(77%) sepia(19%) saturate(5576%) hue-rotate(40deg) brightness(95%) contrast(76%)'
+          )
+        "
+        data-name="Bright-Green"
+        class="ui-link"
+        #myAnchor
+        >Bright Green</a
+      ><a
+        style="background-color: #50b848; color: #ffffff"
+        (click)="
+          updateThumbnailColor(
+            '#50b848',
+            ' brightness(0) saturate(100%) invert(63%) sepia(40%) saturate(726%) hue-rotate(68deg) brightness(91%) contrast(82%)'
+          )
+        "
+        data-name="Grass-Green"
+        class="ui-link"
+        #myAnchor
+        >Grass Green</a
+      ><a
+        style="background-color: #00833e; color: #ffffff"
+        (click)="
+          updateThumbnailColor(
+            '#00833e',
+            ' brightness(0) saturate(100%) invert(32%) sepia(98%) saturate(764%) hue-rotate(111deg) brightness(91%) contrast(101%)'
+          )
+        "
+        data-name="Kelly-Green"
+        class="ui-link"
+        #myAnchor
+        >Kelly Green</a
+      ><a
+        style="background-color: #0e553f; color: #ffffff"
+        (click)="
+          updateThumbnailColor(
+            '#0e553f',
+            ' brightness(0) saturate(100%) invert(22%) sepia(83%) saturate(420%) hue-rotate(110deg) brightness(96%) contrast(93%)'
+          )
+        "
+        data-name="Forest-Green"
+        class="ui-link"
+        #myAnchor
+        >Forest Green</a
+      ><a
+        style="background-color: #124734; color: #ffffff"
+        (click)="
+          updateThumbnailColor(
+            '#124734',
+            ' brightness(0) saturate(100%) invert(20%) sepia(49%) saturate(601%) hue-rotate(107deg) brightness(94%) contrast(93%)'
+          )
+        "
+        data-name="Hunter-Green"
+        class="ui-link"
+        #myAnchor
+        >Hunter Green</a
+      ><a
+        style="background-color: #4e5a30; color: #ffffff"
+        (click)="
+          updateThumbnailColor(
+            '#4e5a30',
+            ' brightness(0) saturate(100%) invert(30%) sepia(52%) saturate(350%) hue-rotate(36deg) brightness(94%) contrast(91%)'
+          )
+        "
+        data-name="Military-Green"
+        class="ui-link"
+        #myAnchor
+        >Army Green</a
+      ><a
+        style="background-color: #00665e; color: #ffffff"
+        (click)="
+          updateThumbnailColor(
+            '#00665e',
+            ' brightness(0) saturate(100%) invert(12%) sepia(91%) saturate(4703%) hue-rotate(171deg) brightness(98%) contrast(101%)'
+          )
+        "
+        data-name="Teal"
+        class="ui-link"
+        #myAnchor
+        >Teal</a
+      ><a
+        style="background-color: #00afaa; color: #ffffff"
+        (click)="
+          updateThumbnailColor(
+            '#00afaa',
+            ' brightness(0) saturate(100%) invert(47%) sepia(88%) saturate(2890%) hue-rotate(148deg) brightness(98%) contrast(101%)'
+          )
+        "
+        data-name="Turquoise"
+        class="ui-link"
+        #myAnchor
+        >Turquoise</a
+      ><a
+        style="background-color: #6ecb98; color: #ffffff"
+        (click)="
+          updateThumbnailColor(
+            '#6ecb98',
+            ' brightness(0) saturate(100%) invert(81%) sepia(22%) saturate(697%) hue-rotate(93deg) brightness(87%) contrast(89%)'
+          )
+        "
+        data-name="Sea-Green"
+        class="ui-link"
+        #myAnchor
+        >Sea Green</a
+      ><a
+        style="background-color: #8db8e9; color: #ffffff"
+        (click)="
+          updateThumbnailColor(
+            '#8db8e9',
+            ' brightness(0) saturate(100%) invert(74%) sepia(12%) saturate(1117%) hue-rotate(174deg) brightness(93%) contrast(95%)'
+          )
+        "
+        data-name="Carolina-Blue"
+        class="ui-link"
+        #myAnchor
+        >Carolina Blue</a
+      ><a
+        style="background-color: #00a7e1; color: #ffffff"
+        (click)="
+          updateThumbnailColor(
+            '#00a7e1',
+            ' brightness(0) saturate(100%) invert(64%) sepia(96%) saturate(4923%) hue-rotate(167deg) brightness(102%) contrast(101%)'
+          )
+        "
+        data-name="Cyan"
+        class="ui-link"
+        #myAnchor
+        >Cyan</a
+      ><a
+        style="background-color: #0082be; color: #ffffff"
+        (click)="
+          updateThumbnailColor(
+            '#0082be',
+            ' brightness(0) saturate(100%) invert(31%) sepia(88%) saturate(2648%) hue-rotate(178deg) brightness(92%) contrast(102%)'
+          )
+        "
+        data-name="Bright-Blue"
+        class="ui-link"
+        #myAnchor
+        >Bright Blue</a
+      ><a
+        style="background-color: #0039a6; color: #ffffff"
+        (click)="
+          updateThumbnailColor(
+            '#0039a6',
+            ' brightness(0) saturate(100%) invert(20%) sepia(26%) saturate(6893%) hue-rotate(211deg) brightness(86%) contrast(113%)'
+          )
+        "
+        data-name="Royal-Blue"
+        class="ui-link"
+        #myAnchor
+        >Royal Blue</a
+      ><a
+        style="background-color: #002d74; color: #ffffff"
+        (click)="
+          updateThumbnailColor(
+            '#002d74',
+            ' brightness(0) saturate(100%) invert(11%) sepia(68%) saturate(3764%) hue-rotate(209deg) brightness(96%) contrast(105%)'
+          )
+        "
+        data-name="Royal-Blue-Dark"
+        class="ui-link"
+        #myAnchor
+        >Royal Blue (Dark)</a
+      ><a
+        style="background-color: #002144; color: #ffffff"
+        (click)="
+          updateThumbnailColor(
+            '#002144',
+            ' brightness(0) saturate(100%) invert(10%) sepia(65%) saturate(1875%) hue-rotate(187deg) brightness(99%) contrast(106%)'
+          )
+        "
+        data-name="Navy-Blue"
+        class="ui-link"
+        #myAnchor
+        >Navy Blue</a
+      ><a
+        style="background-color: #333e48; color: #ffffff"
+        (click)="
+          updateThumbnailColor(
+            '#333e48',
+            ' brightness(0) saturate(100%) invert(18%) sepia(13%) saturate(938%) hue-rotate(167deg) brightness(99%) contrast(84%)'
+          )
+        "
+        data-name="Gunmetal-Blue"
+        class="ui-link"
+        #myAnchor
+        >Gunmetal Blue</a
+      ><a
+        style="background-color: #9164cc; color: #ffffff"
+        (click)="
+          updateThumbnailColor(
+            '#9164cc',
+            ' brightness(0) saturate(100%) invert(59%) sepia(40%) saturate(4391%) hue-rotate(226deg) brightness(82%) contrast(93%)'
+          )
+        "
+        data-name="Light-Purple"
+        class="ui-link"
+        #myAnchor
+        >Light Purple</a
+      ><a
+        style="background-color: #5b2d82; color: #ffffff"
+        (click)="
+          updateThumbnailColor(
+            '#5b2d82',
+            ' brightness(0) saturate(100%) invert(22%) sepia(28%) saturate(3010%) hue-rotate(246deg) brightness(92%) contrast(96%)'
+          )
+        "
+        data-name="Purple"
+        class="ui-link"
+        #myAnchor
+        >Purple</a
+      ><a
+        style="background-color: #43235f; color: #ffffff"
+        (click)="
+          updateThumbnailColor(
+            '#43235f',
+            ' brightness(0) saturate(100%) invert(15%) sepia(14%) saturate(5774%) hue-rotate(245deg) brightness(96%) contrast(95%)'
+          )
+        "
+        data-name="Dk-Purple"
+        class="ui-link"
+        #myAnchor
+        >Dark Purple</a
+      ><a
+        style="background-color: #a98c3d; color: #ffffff"
+        (click)="
+          updateThumbnailColor(
+            '#a98c3d',
+            ' brightness(0) saturate(100%) invert(48%) sepia(35%) saturate(711%) hue-rotate(6deg) brightness(110%) contrast(82%)'
+          )
+        "
+        data-name="Old-Gold"
+        class="ui-link"
+        #myAnchor
+        >Old Gold</a
+      ><a
+        style="background-color: #cfae7b; color: #ffffff"
+        (click)="
+          updateThumbnailColor(
+            '#cfae7b',
+            ' brightness(0) saturate(100%) invert(79%) sepia(47%) saturate(320%) hue-rotate(349deg) brightness(85%) contrast(90%)'
+          )
+        "
+        data-name="Vegas-Gold"
+        class="ui-link"
+        #myAnchor
+        >Vegas Gold</a
+      ><a
+        style="background-color: #cfc393; color: #ffffff"
+        (click)="
+          updateThumbnailColor(
+            '#cfc393',
+            ' brightness(0) saturate(100%) invert(85%) sepia(6%) saturate(1686%) hue-rotate(11deg) brightness(96%) contrast(81%)'
+          )
+        "
+        class="lesspad ui-link"
+        #myAnchor
+        data-name="Vegas-Gold-Pitt"
+        >Vegas Gold (Light)</a
+      ><a
+        style="background-color: #e2d0a6; color: #000000"
+        (click)="
+          updateThumbnailColor(
+            '#e2d0a6',
+            ' brightness(0) saturate(100%) invert(85%) sepia(36%) saturate(239%) hue-rotate(1deg) brightness(94%) contrast(89%)'
+          )
+        "
+        data-name="Neutral"
+        class="ui-link"
+        #myAnchor
+        >Neutral</a
+      ><a
+        style="background-color: #b07c57; color: #ffffff"
+        (click)="
+          updateThumbnailColor(
+            '#b07c57',
+            ' brightness(0) saturate(100%) invert(61%) sepia(10%) saturate(1687%) hue-rotate(342deg) brightness(83%) contrast(88%)'
+          )
+        "
+        data-name="Light-Brown"
+        class="ui-link"
+        #myAnchor
+        >Light Brown</a
+      ><a
+        style="background-color: #753d29; color: #ffffff"
+        (click)="
+          updateThumbnailColor(
+            '#753d29',
+            ' brightness(0) saturate(100%) invert(25%) sepia(11%) saturate(3842%) hue-rotate(332deg) brightness(89%) contrast(82%)'
+          )
+        "
+        data-name="Brown"
+        class="ui-link"
+        #myAnchor
+        >Brown</a
+      ><a
+        style="background-color: #4b3d2a; color: #ffffff"
+        (click)="
+          updateThumbnailColor(
+            '#4b3d2a',
+            ' brightness(0) saturate(100%) invert(23%) sepia(20%) saturate(768%) hue-rotate(355deg) brightness(93%) contrast(92%)'
+          )
+        "
+        data-name="Dark-Brown"
+        class="ui-link"
+        #myAnchor
+        >Dark Brown</a
+      ><a
+        style="background-color: #ed80a8; color: #ffffff"
+        (click)="
+          updateThumbnailColor(
+            '#ed80a8',
+            ' brightness(0) saturate(100%) invert(87%) sepia(21%) saturate(6603%) hue-rotate(292deg) brightness(95%) contrast(95%)'
+          )
+        "
+        data-name="Pink"
+        class="ui-link"
+        #myAnchor
+        >Pink</a
+      ><a
+        style="background-color: #d50071; color: #ffffff"
+        (click)="
+          updateThumbnailColor(
+            '#d50071',
+            ' brightness(0) saturate(100%) invert(16%) sepia(60%) saturate(5776%) hue-rotate(316deg) brightness(84%) contrast(113%)'
+          )
+        "
+        data-name="Fuchsia"
+        class="ui-link"
+        #myAnchor
+        >Hot Pink</a
+      ><a
+        style="background-color: #b94197; color: #ffffff"
+        (click)="
+          updateThumbnailColor(
+            '#b94197',
+            ' brightness(0) saturate(100%) invert(38%) sepia(35%) saturate(1140%) hue-rotate(265deg) brightness(92%) contrast(97%)'
+          )
+        "
+        data-name="Magenta"
+        class="ui-link"
+        #myAnchor
+        >Magenta</a
+      >
+    </div>
+  </div>
+
+  <!-- ############################### side Panel #######################  -->
+  <div
+    class="col-8 column mx-2 col-3"
+    [style.display]="side_panel"
+    width="700px"
+  >
+    <div id="clrList" class="flexb">
+      <a style="width: 120px; height: 230px" (click)="sidePanel('none', '')"
+        ><img src="../../assets/image/singlet/side panel styles/(1)none.jpg"
+      /></a>
+      <a
+        style="width: 120px; height: 230px"
+        (click)="
+          sidePanel(
+            '3 lines',
+            '../../assets/image/singlet/side panel styles/3 lines(2).png'
+          )
+        "
+        ><img
+          src="../../assets/image/singlet/side panel styles/3 lines (2).jpg"
+      /></a>
+      <a
+        style="width: 120px; height: 230px"
+        (click)="
+          sidePanel(
+            '3 srtipes',
+            '../../assets/image/singlet/side panel styles/3 stripes(3).png'
+          )
+        "
+        ><img
+          src="../../assets/image/singlet/side panel styles/3 srtipes(3).jpg"
+      /></a>
+      <a
+        style="width: 120px; height: 230px"
+        (click)="
+          sidePanel(
+            'aeris',
+            '../../assets/image/singlet/side panel styles/aeris (4).png'
+          )
+        "
+        ><img src="../../assets/image/singlet/side panel styles/aeris(4).jpg"
+      /></a>
+      <a
+        style="width: 120px; height: 230px"
+        (click)="
+          sidePanel(
+            'aggression',
+            '../../assets/image/singlet/side panel styles/aggression (5).png'
+          )
+        "
+        ><img
+          src="../../assets/image/singlet/side panel styles/aggression (5).jpg"
+      /></a>
+      <a
+        style="width: 120px; height: 230px"
+        (click)="
+          sidePanel(
+            'ascend',
+            '../../assets/image/singlet/side panel styles/ascend (6).png'
+          )
+        "
+        ><img src="../../assets/image/singlet/side panel styles/ascend (6).jpg"
+      /></a>
+      <a
+        style="width: 120px; height: 230px"
+        (click)="
+          sidePanel(
+            'battle armor',
+            '../../assets/image/singlet/side panel styles/battle armor.png'
+          )
+        "
+        ><img
+          src="../../assets/image/singlet/side panel styles/battle armor (7).jpg"
+      /></a>
+      <a
+        style="width: 120px; height: 230px"
+        (click)="
+          sidePanel(
+            'curved',
+            '../../assets/image/singlet/side panel styles/curved.png'
+          )
+        "
+        ><img src="../../assets/image/singlet/side panel styles/curved (8).jpg"
+      /></a>
+      <a
+        style="width: 120px; height: 230px"
+        (click)="
+          sidePanel(
+            'defy',
+            '../../assets/image/singlet/side panel styles/defy.png'
+          )
+        "
+        ><img src="../../assets/image/singlet/side panel styles/defy (9).jpg"
+      /></a>
+      <a
+        style="width: 120px; height: 230px"
+        (click)="
+          sidePanel(
+            'diverge',
+            '../../assets/image/singlet/side panel styles/diverge.png'
+          )
+        "
+        ><img
+          src="../../assets/image/singlet/side panel styles/diverge (10).jpg"
+      /></a>
+      <a
+        style="width: 120px; height: 230px"
+        (click)="
+          sidePanel(
+            'edge',
+            '../../assets/image/singlet/side panel styles/edge.png'
+          )
+        "
+        ><img src="../../assets/image/singlet/side panel styles/edge(11).jpg"
+      /></a>
+      <a
+        style="width: 120px; height: 230px"
+        (click)="
+          sidePanel(
+            'feather',
+            '../../assets/image/singlet/side panel styles/feather.png'
+          )
+        "
+        ><img src="../../assets/image/singlet/side panel styles/feather.jpg"
+      /></a>
+      <a
+        style="width: 120px; height: 230px"
+        (click)="
+          sidePanel(
+            'fly',
+            '../../assets/image/singlet/side panel styles/fly.png'
+          )
+        "
+        ><img src="../../assets/image/singlet/side panel styles/fly (13).jpg"
+      /></a>
+      <a
+        style="width: 120px; height: 230px"
+        (click)="
+          sidePanel(
+            'gridlock',
+            '../../assets/image/singlet/side panel styles/gridlock.png'
+          )
+        "
+        ><img
+          src="../../assets/image/singlet/side panel styles/gridlock (14).jpg"
+      /></a>
+      <a
+        style="width: 120px; height: 230px"
+        (click)="
+          sidePanel(
+            'guardian',
+            '../../assets/image/singlet/side panel styles/guardian.png'
+          )
+        "
+        ><img
+          src="../../assets/image/singlet/side panel styles/guardian (15).jpg"
+      /></a>
+      <a
+        style="width: 120px; height: 230px"
+        (click)="
+          sidePanel(
+            'hardened',
+            '../../assets/image/singlet/side panel styles/hardened (16).png'
+          )
+        "
+        ><img
+          src="../../assets/image/singlet/side panel styles/hardened (16).jpg"
+      /></a>
+      <a
+        style="width: 120px; height: 230px"
+        (click)="
+          sidePanel(
+            'hex armor',
+            '../../assets/image/singlet/side panel styles/hex armor.png'
+          )
+        "
+        ><img
+          src="../../assets/image/singlet/side panel styles/hex armor (17).jpg"
+      /></a>
+      <a
+        style="width: 120px; height: 230px"
+        (click)="
+          sidePanel(
+            'hex core',
+            '../../assets/image/singlet/side panel styles/hex core.png'
+          )
+        "
+        ><img
+          src="../../assets/image/singlet/side panel styles/hex core (18).jpg"
+      /></a>
+      <a
+        style="width: 120px; height: 230px"
+        (click)="
+          sidePanel(
+            'machine blade',
+            '../../assets/image/singlet/side panel styles/machine blade (19).png'
+          )
+        "
+        ><img
+          src="../../assets/image/singlet/side panel styles/machine blade (19).jpg"
+      /></a>
+      <a
+        style="width: 120px; height: 230px"
+        (click)="
+          sidePanel(
+            'pacific',
+            '../../assets/image/singlet/side panel styles/pacific (20).png'
+          )
+        "
+        ><img
+          src="../../assets/image/singlet/side panel styles/pacific (20).jpg"
+      /></a>
+      <a
+        style="width: 120px; height: 230px"
+        (click)="
+          sidePanel(
+            'phoenix',
+            '../../assets/image/singlet/side panel styles/phoenix (21).png'
+          )
+        "
+        ><img
+          src="../../assets/image/singlet/side panel styles/phoenix (21).jpg"
+      /></a>
+      <a
+        style="width: 120px; height: 230px"
+        (click)="
+          sidePanel(
+            'pinnacle',
+            '../../assets/image/singlet/side panel styles/pinnacle (22).png'
+          )
+        "
+        ><img
+          src="../../assets/image/singlet/side panel styles/pinnacle (22).jpg"
+      /></a>
+      <a
+        style="width: 120px; height: 230px"
+        (click)="
+          sidePanel(
+            'prime',
+            '../../assets/image/singlet/side panel styles/prime (23).png'
+          )
+        "
+        ><img src="../../assets/image/singlet/side panel styles/prime (23).jpg"
+      /></a>
+      <a
+        style="width: 120px; height: 230px"
+        (click)="
+          sidePanel(
+            'raijan',
+            '../../assets/image/singlet/side panel styles/raijan (24).png'
+          )
+        "
+        ><img
+          src="../../assets/image/singlet/side panel styles/raijan (24).jpg"
+      /></a>
+      <a
+        style="width: 120px; height: 230px"
+        (click)="
+          sidePanel(
+            'reaction',
+            '../../assets/image/singlet/side panel styles/reaction (25).png'
+          )
+        "
+        ><img
+          src="../../assets/image/singlet/side panel styles/reaction (25).jpg"
+      /></a>
+      <a
+        style="width: 120px; height: 230px"
+        (click)="
+          sidePanel(
+            'renegade',
+            '../../assets/image/singlet/side panel styles/renegade (26).png'
+          )
+        "
+        ><img
+          src="../../assets/image/singlet/side panel styles/renegade (26).jpg"
+      /></a>
+      <a
+        style="width: 120px; height: 230px"
+        (click)="
+          sidePanel(
+            'repression',
+            '../../assets/image/singlet/side panel styles/repression (27).png'
+          )
+        "
+        ><img
+          src="../../assets/image/singlet/side panel styles/repression (27).jpg"
+      /></a>
+      <a
+        style="width: 120px; height: 230px"
+        (click)="
+          sidePanel(
+            'shield',
+            '../../assets/image/singlet/side panel styles/shield (28).png'
+          )
+        "
+        ><img
+          src="../../assets/image/singlet/side panel styles/shield (28).jpg"
+      /></a>
+      <a
+        style="width: 120px; height: 230px"
+        (click)="
+          sidePanel(
+            'shredded',
+            '../../assets/image/singlet/side panel styles/shredded (29).png'
+          )
+        "
+        ><img
+          src="../../assets/image/singlet/side panel styles/shredded (29).jpg"
+      /></a>
+      <a
+        style="width: 120px; height: 230px"
+        (click)="
+          sidePanel(
+            'sidepoint',
+            '../../assets/image/singlet/side panel styles/sidepoint (30).png'
+          )
+        "
+        ><img
+          src="../../assets/image/singlet/side panel styles/sidepoint (30).jpg"
+      /></a>
+      <a
+        style="width: 120px; height: 230px"
+        (click)="
+          sidePanel(
+            'sideways',
+            '../../assets/image/singlet/side panel styles/sideways (31).png'
+          )
+        "
+        ><img
+          src="../../assets/image/singlet/side panel styles/sideways (31).jpg"
+      /></a>
+      <a
+        style="width: 120px; height: 230px"
+        (click)="
+          sidePanel(
+            'solid 1',
+            '../../assets/image/singlet/side panel styles/solid 1(32).png'
+          )
+        "
+        ><img
+          src="../../assets/image/singlet/side panel styles/solid 1(32).jpg"
+      /></a>
+      <a
+        style="width: 120px; height: 230px"
+        (click)="
+          sidePanel(
+            'solid 2',
+            '../../assets/image/singlet/side panel styles/solid 2 (33).png'
+          )
+        "
+        ><img
+          src="../../assets/image/singlet/side panel styles/solid 2 (33).jpg"
+      /></a>
+      <a
+        style="width: 120px; height: 230px"
+        (click)="
+          sidePanel(
+            'solid 4',
+            '../../assets/image/singlet/side panel styles/solid 4 (34).png'
+          )
+        "
+        ><img
+          src="../../assets/image/singlet/side panel styles/solid 4 (34).jpg"
+      /></a>
+      <a
+        style="width: 120px; height: 230px"
+        (click)="
+          sidePanel(
+            'spur',
+            '../../assets/image/singlet/side panel styles/spur (35).png'
+          )
+        "
+        ><img src="../../assets/image/singlet/side panel styles/spur (35).jpg"
+      /></a>
+      <a
+        style="width: 120px; height: 230px"
+        (click)="
+          sidePanel(
+            'stacked',
+            '../../assets/image/singlet/side panel styles/stacked (36).png'
+          )
+        "
+        ><img
+          src="../../assets/image/singlet/side panel styles/stacked (36).jpg"
+      /></a>
+      <a
+        style="width: 120px; height: 230px"
+        (click)="
+          sidePanel(
+            'stinger',
+            '../../assets/image/singlet/side panel styles/stinger (37).png'
+          )
+        "
+        ><img
+          src="../../assets/image/singlet/side panel styles/stinger (37).jpg"
+      /></a>
+      <a
+        style="width: 120px; height: 230px"
+        (click)="
+          sidePanel(
+            'takedown',
+            '../../assets/image/singlet/side panel styles/takedown (38).png'
+          )
+        "
+        ><img
+          src="../../assets/image/singlet/side panel styles/takedown (38).jpg"
+      /></a>
+      <a
+        style="width: 120px; height: 230px"
+        (click)="
+          sidePanel(
+            'twist',
+            '../../assets/image/singlet/side panel styles/twist (39).png'
+          )
+        "
+        ><img src="../../assets/image/singlet/side panel styles/twist (39).jpg"
+      /></a>
+      <a
+        style="width: 120px; height: 230px"
+        (click)="
+          sidePanel(
+            'venom',
+            '../../assets/image/singlet/side panel styles/venom (40).png'
+          )
+        "
+        ><img src="../../assets/image/singlet/side panel styles/venom (40).jpg"
+      /></a>
+      <a
+        style="width: 120px; height: 230px"
+        (click)="
+          sidePanel(
+            'wings',
+            '../../assets/image/singlet/side panel styles/wings (41).png'
+          )
+        "
+        ><img src="../../assets/image/singlet/side panel styles/wings (41).jpg"
+      /></a>
+    </div>
+  </div>
+
+  <!-- ############################### side color ####################### -->
+  <div class="col-8 column mx-2 col3" [style.display]="side_panel_color">
+    <div id="clrList" class="flex">
+      <a
+        style="background-color: #000000"
+        (click)="PanelColor('#000000', 'brightness(0) saturate(100%)')"
+        data-name="Black"
+        class="ui-link"
+        #myAnchor
+        >Black</a
+      ><a
+        style="background-color: #ffffff; color: #000000"
+        (click)="
+          PanelColor(
+            '#ffffff',
+            'brightness(0) saturate(100%) invert(92%) sepia(47%) saturate(17%) hue-rotate(296deg) brightness(107%) contrast(100%)'
+          )
+        "
+        data-name="White"
+        class="ui-link"
+        #myAnchor
+        >White</a
+      ><a
+        style="background-color: #414042; color: #ffffff"
+        (click)="
+          PanelColor(
+            '#939598',
+            ' brightness(96%) invert(37%) sepia(5%) saturate(169%) hue-rotate(182deg)  contrast(90%)'
+          )
+        "
+        data-name="Char-Gray"
+        class="ui-link"
+        #myAnchor
+        >Dark Gray</a
+      ><a
+        style="background-color: #939598; color: #ffffff"
+        (click)="
+          PanelColor(
+            '#414042',
+            ' brightness(89%) invert(77%) sepia(6%) saturate(232%) hue-rotate(224deg)  contrast(86%)'
+          )
+        "
+        data-name="Gray"
+        class="ui-link"
+        #myAnchor
+        >Gray</a
+      ><a
+        style="background-color: #c7c8ca; color: #000000"
+        (click)="
+          PanelColor(
+            '#c7c8ca',
+            ' brightness(99%) invert(18%) sepia(0%) saturate(2697%) hue-rotate(287deg)  contrast(88%)'
+          )
+        "
+        data-name="Silver"
+        class="ui-link"
+        #myAnchor
+        >Silver</a
+      ><a
+        style="background-color: #cf0a2c; color: #ffffff"
+        (click)="
+          PanelColor(
+            '#cf0a2c',
+            ' brightness(0) saturate(100%) invert(21%) sepia(58%) saturate(5843%) hue-rotate(334deg) brightness(74%) contrast(131%)'
+          )
+        "
+        data-name="Bright-Red"
+        class="ui-link"
+        #myAnchor
+        >Bright Red</a
+      ><a
+        style="background-color: #ac162c; color: #ffffff"
+        (click)="
+          PanelColor(
+            '#ac162c',
+            ' brightness(0) saturate(100%) invert(24%) sepia(40%) saturate(3446%) hue-rotate(328deg) brightness(79%) contrast(112%)'
+          )
+        "
+        data-name="Red"
+        class="ui-link"
+        #myAnchor
+        >Red</a
+      ><a
+        style="background-color: #7a232e; color: #ffffff"
+        (click)="
+          PanelColor(
+            '#7a232e',
+            ' brightness(0) saturate(100%) invert(15%) sepia(26%) saturate(5403%) hue-rotate(331deg) brightness(95%) contrast(89%)'
+          )
+        "
+        data-name="Maroon"
+        class="ui-link"
+        #myAnchor
+        >Maroon</a
+      ><a
+        style="background-color: #6a1b32; color: #ffffff"
+        (click)="
+          PanelColor(
+            '#6a1b32',
+            ' brightness(0) saturate(100%) invert(12%) sepia(69%) saturate(2082%) hue-rotate(318deg) brightness(100%) contrast(93%)'
+          )
+        "
+        data-name="Dark-Maroon"
+        class="ui-link"
+        #myAnchor
+        >Dark Maroon</a
+      ><a
+        style="background-color: #a41f35; color: #ffffff"
+        (click)="
+          PanelColor(
+            '#a41f35',
+            ' brightness(0) saturate(100%) invert(16%) sepia(60%) saturate(3578%) hue-rotate(334deg) brightness(91%) contrast(93%)'
+          )
+        "
+        data-name="Cardinal-Red"
+        class="ui-link"
+        #myAnchor
+        >Cardinal Red</a
+      ><a
+        style="background-color: #c12033; color: #ffffff"
+        (click)="
+          PanelColor(
+            '#c12033',
+            ' brightness(0) saturate(100%) invert(18%) sepia(60%) saturate(2494%) hue-rotate(331deg) brightness(113%) contrast(105%)'
+          )
+        "
+        class="lesspad ui-link"
+        #myAnchor
+        data-name="Scarlet-Red"
+        >Scarlet Red (Ohio State)</a
+      ><a
+        style="background-color: #ef3824; color: #ffffff"
+        (click)="
+          PanelColor(
+            '#ef3824',
+            ' brightness(0) saturate(100%) invert(27%) sepia(81%) saturate(4940%) hue-rotate(351deg) brightness(108%) contrast(87%)'
+          )
+        "
+        data-name="RedOrange"
+        class="ui-link"
+        #myAnchor
+        >Red Orange</a
+      ><a
+        style="background-color: #ff4717; color: #ffffff"
+        (click)="
+          PanelColor(
+            '#ff4717',
+            ' brightness(0) saturate(100%) invert(35%) sepia(69%) saturate(3651%) hue-rotate(351deg) brightness(107%) contrast(103%)'
+          )
+        "
+        data-name="Orange"
+        class="ui-link"
+        #myAnchor
+        >Bright Orange</a
+      ><a
+        style="background-color: #ff8300; color: #ffffff"
+        (click)="
+          PanelColor(
+            '#ff8300',
+            ' brightness(0) saturate(100%) invert(57%) sepia(93%) saturate(2608%) hue-rotate(359deg) brightness(101%) contrast(107%)'
+          )
+        "
+        data-name="NewOrange"
+        class="ui-link"
+        #myAnchor
+        >Orange</a
+      ><a
+        style="background-color: #d15e14; color: #ffffff"
+        (click)="
+          PanelColor(
+            '#d15e14',
+            ' brightness(0) saturate(100%) invert(37%) sepia(93%) saturate(865%) hue-rotate(354deg) brightness(94%) contrast(92%)'
+          )
+        "
+        class="lesspad ui-link"
+        #myAnchor
+        data-name="Texas-Orange"
+        >Burnt Orange (Texas Orange)</a
+      ><a
+        style="background-color: #ece83a; color: #000000"
+        (click)="
+          PanelColor(
+            '#ece83a',
+            ' brightness(0) saturate(100%) invert(91%) sepia(45%) saturate(751%) hue-rotate(356deg) brightness(96%) contrast(92%)'
+          )
+        "
+        data-name="NeonYellow"
+        class="ui-link"
+        #myAnchor
+        >Neon Yellow</a
+      ><a
+        style="background-color: #ffdd00; color: #000000"
+        (click)="
+          PanelColor(
+            '#ffdd00',
+            ' brightness(0) saturate(100%) invert(71%) sepia(94%) saturate(559%) hue-rotate(360deg) brightness(107%) contrast(103%)'
+          )
+        "
+        data-name="Yellow"
+        class="ui-link"
+        #myAnchor
+        >Yellow</a
+      ><a
+        style="background-color: #ffc627; color: #ffffff"
+        (click)="
+          PanelColor(
+            '#ffc627',
+            ' brightness(0) saturate(100%) invert(84%) sepia(93%) saturate(2984%) hue-rotate(327deg) brightness(98%) contrast(105%)'
+          )
+        "
+        data-name="Athletic-Gold"
+        class="ui-link"
+        #myAnchor
+        >Athletic Gold</a
+      ><a
+        style="background-color: #eba900; color: #ffffff"
+        (click)="
+          PanelColor(
+            '#eba900',
+            ' brightness(0) saturate(100%) invert(50%) sepia(92%) saturate(604%) hue-rotate(11deg) brightness(108%) contrast(101%)'
+          )
+        "
+        data-name="Athletic-Gold-Dark"
+        class="ui-link"
+        #myAnchor
+        >Athletic Gold (Dark)</a
+      ><a
+        style="background-color: #77bc1f; color: #ffffff"
+        (click)="
+          PanelColor(
+            '#77bc1f',
+            ' brightness(0) saturate(100%) invert(77%) sepia(19%) saturate(5576%) hue-rotate(40deg) brightness(95%) contrast(76%)'
+          )
+        "
+        data-name="Bright-Green"
+        class="ui-link"
+        #myAnchor
+        >Bright Green</a
+      ><a
+        style="background-color: #50b848; color: #ffffff"
+        (click)="
+          PanelColor(
+            '#50b848',
+            ' brightness(0) saturate(100%) invert(63%) sepia(40%) saturate(726%) hue-rotate(68deg) brightness(91%) contrast(82%)'
+          )
+        "
+        data-name="Grass-Green"
+        class="ui-link"
+        #myAnchor
+        >Grass Green</a
+      ><a
+        style="background-color: #00833e; color: #ffffff"
+        (click)="
+          PanelColor(
+            '#00833e',
+            ' brightness(0) saturate(100%) invert(32%) sepia(98%) saturate(764%) hue-rotate(111deg) brightness(91%) contrast(101%)'
+          )
+        "
+        data-name="Kelly-Green"
+        class="ui-link"
+        #myAnchor
+        >Kelly Green</a
+      ><a
+        style="background-color: #0e553f; color: #ffffff"
+        (click)="
+          PanelColor(
+            '#0e553f',
+            ' brightness(0) saturate(100%) invert(22%) sepia(83%) saturate(420%) hue-rotate(110deg) brightness(96%) contrast(93%)'
+          )
+        "
+        data-name="Forest-Green"
+        class="ui-link"
+        #myAnchor
+        >Forest Green</a
+      ><a
+        style="background-color: #124734; color: #ffffff"
+        (click)="
+          PanelColor(
+            '#124734',
+            ' brightness(0) saturate(100%) invert(20%) sepia(49%) saturate(601%) hue-rotate(107deg) brightness(94%) contrast(93%)'
+          )
+        "
+        data-name="Hunter-Green"
+        class="ui-link"
+        #myAnchor
+        >Hunter Green</a
+      ><a
+        style="background-color: #4e5a30; color: #ffffff"
+        (click)="
+          PanelColor(
+            '#4e5a30',
+            ' brightness(0) saturate(100%) invert(30%) sepia(52%) saturate(350%) hue-rotate(36deg) brightness(94%) contrast(91%)'
+          )
+        "
+        data-name="Military-Green"
+        class="ui-link"
+        #myAnchor
+        >Army Green</a
+      ><a
+        style="background-color: #00665e; color: #ffffff"
+        (click)="
+          PanelColor(
+            '#00665e',
+            ' brightness(0) saturate(100%) invert(12%) sepia(91%) saturate(4703%) hue-rotate(171deg) brightness(98%) contrast(101%)'
+          )
+        "
+        data-name="Teal"
+        class="ui-link"
+        #myAnchor
+        >Teal</a
+      ><a
+        style="background-color: #00afaa; color: #ffffff"
+        (click)="
+          PanelColor(
+            '#00afaa',
+            ' brightness(0) saturate(100%) invert(47%) sepia(88%) saturate(2890%) hue-rotate(148deg) brightness(98%) contrast(101%)'
+          )
+        "
+        data-name="Turquoise"
+        class="ui-link"
+        #myAnchor
+        >Turquoise</a
+      ><a
+        style="background-color: #6ecb98; color: #ffffff"
+        (click)="
+          PanelColor(
+            '#6ecb98',
+            ' brightness(0) saturate(100%) invert(81%) sepia(22%) saturate(697%) hue-rotate(93deg) brightness(87%) contrast(89%)'
+          )
+        "
+        data-name="Sea-Green"
+        class="ui-link"
+        #myAnchor
+        >Sea Green</a
+      ><a
+        style="background-color: #8db8e9; color: #ffffff"
+        (click)="
+          PanelColor(
+            '#8db8e9',
+            ' brightness(0) saturate(100%) invert(74%) sepia(12%) saturate(1117%) hue-rotate(174deg) brightness(93%) contrast(95%)'
+          )
+        "
+        data-name="Carolina-Blue"
+        class="ui-link"
+        #myAnchor
+        >Carolina Blue</a
+      ><a
+        style="background-color: #00a7e1; color: #ffffff"
+        (click)="
+          PanelColor(
+            '#00a7e1',
+            ' brightness(0) saturate(100%) invert(64%) sepia(96%) saturate(4923%) hue-rotate(167deg) brightness(102%) contrast(101%)'
+          )
+        "
+        data-name="Cyan"
+        class="ui-link"
+        #myAnchor
+        >Cyan</a
+      ><a
+        style="background-color: #0082be; color: #ffffff"
+        (click)="
+          PanelColor(
+            '#0082be',
+            ' brightness(0) saturate(100%) invert(31%) sepia(88%) saturate(2648%) hue-rotate(178deg) brightness(92%) contrast(102%)'
+          )
+        "
+        data-name="Bright-Blue"
+        class="ui-link"
+        #myAnchor
+        >Bright Blue</a
+      ><a
+        style="background-color: #0039a6; color: #ffffff"
+        (click)="
+          PanelColor(
+            '#0039a6',
+            ' brightness(0) saturate(100%) invert(20%) sepia(26%) saturate(6893%) hue-rotate(211deg) brightness(86%) contrast(113%)'
+          )
+        "
+        data-name="Royal-Blue"
+        class="ui-link"
+        #myAnchor
+        >Royal Blue</a
+      ><a
+        style="background-color: #002d74; color: #ffffff"
+        (click)="
+          PanelColor(
+            '#002d74',
+            ' brightness(0) saturate(100%) invert(11%) sepia(68%) saturate(3764%) hue-rotate(209deg) brightness(96%) contrast(105%)'
+          )
+        "
+        data-name="Royal-Blue-Dark"
+        class="ui-link"
+        #myAnchor
+        >Royal Blue (Dark)</a
+      ><a
+        style="background-color: #002144; color: #ffffff"
+        (click)="
+          PanelColor(
+            '#002144',
+            ' brightness(0) saturate(100%) invert(10%) sepia(65%) saturate(1875%) hue-rotate(187deg) brightness(99%) contrast(106%)'
+          )
+        "
+        data-name="Navy-Blue"
+        class="ui-link"
+        #myAnchor
+        >Navy Blue</a
+      ><a
+        style="background-color: #333e48; color: #ffffff"
+        (click)="
+          PanelColor(
+            '#333e48',
+            ' brightness(0) saturate(100%) invert(18%) sepia(13%) saturate(938%) hue-rotate(167deg) brightness(99%) contrast(84%)'
+          )
+        "
+        data-name="Gunmetal-Blue"
+        class="ui-link"
+        #myAnchor
+        >Gunmetal Blue</a
+      ><a
+        style="background-color: #9164cc; color: #ffffff"
+        (click)="
+          PanelColor(
+            '#9164cc',
+            ' brightness(0) saturate(100%) invert(59%) sepia(40%) saturate(4391%) hue-rotate(226deg) brightness(82%) contrast(93%)'
+          )
+        "
+        data-name="Light-Purple"
+        class="ui-link"
+        #myAnchor
+        >Light Purple</a
+      ><a
+        style="background-color: #5b2d82; color: #ffffff"
+        (click)="
+          PanelColor(
+            '#5b2d82',
+            ' brightness(0) saturate(100%) invert(22%) sepia(28%) saturate(3010%) hue-rotate(246deg) brightness(92%) contrast(96%)'
+          )
+        "
+        data-name="Purple"
+        class="ui-link"
+        #myAnchor
+        >Purple</a
+      ><a
+        style="background-color: #43235f; color: #ffffff"
+        (click)="
+          PanelColor(
+            '#43235f',
+            ' brightness(0) saturate(100%) invert(15%) sepia(14%) saturate(5774%) hue-rotate(245deg) brightness(96%) contrast(95%)'
+          )
+        "
+        data-name="Dk-Purple"
+        class="ui-link"
+        #myAnchor
+        >Dark Purple</a
+      ><a
+        style="background-color: #a98c3d; color: #ffffff"
+        (click)="
+          PanelColor(
+            '#a98c3d',
+            ' brightness(0) saturate(100%) invert(48%) sepia(35%) saturate(711%) hue-rotate(6deg) brightness(110%) contrast(82%)'
+          )
+        "
+        data-name="Old-Gold"
+        class="ui-link"
+        #myAnchor
+        >Old Gold</a
+      ><a
+        style="background-color: #cfae7b; color: #ffffff"
+        (click)="
+          PanelColor(
+            '#cfae7b',
+            ' brightness(0) saturate(100%) invert(79%) sepia(47%) saturate(320%) hue-rotate(349deg) brightness(85%) contrast(90%)'
+          )
+        "
+        data-name="Vegas-Gold"
+        class="ui-link"
+        #myAnchor
+        >Vegas Gold</a
+      ><a
+        style="background-color: #cfc393; color: #ffffff"
+        (click)="
+          PanelColor(
+            '#cfc393',
+            ' brightness(0) saturate(100%) invert(85%) sepia(6%) saturate(1686%) hue-rotate(11deg) brightness(96%) contrast(81%)'
+          )
+        "
+        class="lesspad ui-link"
+        #myAnchor
+        data-name="Vegas-Gold-Pitt"
+        >Vegas Gold (Light)</a
+      ><a
+        style="background-color: #e2d0a6; color: #000000"
+        (click)="
+          PanelColor(
+            '#e2d0a6',
+            ' brightness(0) saturate(100%) invert(85%) sepia(36%) saturate(239%) hue-rotate(1deg) brightness(94%) contrast(89%)'
+          )
+        "
+        data-name="Neutral"
+        class="ui-link"
+        #myAnchor
+        >Neutral</a
+      ><a
+        style="background-color: #b07c57; color: #ffffff"
+        (click)="
+          PanelColor(
+            '#b07c57',
+            ' brightness(0) saturate(100%) invert(61%) sepia(10%) saturate(1687%) hue-rotate(342deg) brightness(83%) contrast(88%)'
+          )
+        "
+        data-name="Light-Brown"
+        class="ui-link"
+        #myAnchor
+        >Light Brown</a
+      ><a
+        style="background-color: #753d29; color: #ffffff"
+        (click)="
+          PanelColor(
+            '#753d29',
+            ' brightness(0) saturate(100%) invert(25%) sepia(11%) saturate(3842%) hue-rotate(332deg) brightness(89%) contrast(82%)'
+          )
+        "
+        data-name="Brown"
+        class="ui-link"
+        #myAnchor
+        >Brown</a
+      ><a
+        style="background-color: #4b3d2a; color: #ffffff"
+        (click)="
+          PanelColor(
+            '#4b3d2a',
+            ' brightness(0) saturate(100%) invert(23%) sepia(20%) saturate(768%) hue-rotate(355deg) brightness(93%) contrast(92%)'
+          )
+        "
+        data-name="Dark-Brown"
+        class="ui-link"
+        #myAnchor
+        >Dark Brown</a
+      ><a
+        style="background-color: #ed80a8; color: #ffffff"
+        (click)="
+          PanelColor(
+            '#ed80a8',
+            ' brightness(0) saturate(100%) invert(87%) sepia(21%) saturate(6603%) hue-rotate(292deg) brightness(95%) contrast(95%)'
+          )
+        "
+        data-name="Pink"
+        class="ui-link"
+        #myAnchor
+        >Pink</a
+      ><a
+        style="background-color: #d50071; color: #ffffff"
+        (click)="
+          PanelColor(
+            '#d50071',
+            ' brightness(0) saturate(100%) invert(16%) sepia(60%) saturate(5776%) hue-rotate(316deg) brightness(84%) contrast(113%)'
+          )
+        "
+        data-name="Fuchsia"
+        class="ui-link"
+        #myAnchor
+        >Hot Pink</a
+      ><a
+        style="background-color: #b94197; color: #ffffff"
+        (click)="
+          PanelColor(
+            '#b94197',
+            ' brightness(0) saturate(100%) invert(38%) sepia(35%) saturate(1140%) hue-rotate(265deg) brightness(92%) contrast(97%)'
+          )
+        "
+        data-name="Magenta"
+        class="ui-link"
+        #myAnchor
+        >Magenta</a
+      >
+    </div>
+  </div>
+
+  <!-- ############################### Cuff #######################  -->
+  <div class="col-8 column mx-2 col-3" [style.display]="cuff" width="700px">
+    <div id="clrList" class="flexb">
+      <a
+        style="width: 120px; height: 230px"
+        (click)="updateCuffImage('none', '')"
+        ><img src="../../assets/image/singlet/cuff styles/(1) none.jpg"
+      /></a>
+      <a
+        style="width: 120px; height: 230px"
+        (click)="
+          updateCuffImage(
+            'agression',
+            '../../assets/image/singlet/cuff styles/agression(2).png'
+          )
+        "
+        ><img src="../../assets/image/singlet/cuff styles/agression(2).jpg"
+      /></a>
+      <a
+        style="width: 120px; height: 230px"
+        (click)="
+          updateCuffImage(
+            'angle 3',
+            '../../assets/image/singlet/cuff styles/angle 3 (4).png'
+          )
+        "
+        ><img src="../../assets/image/singlet/cuff styles/angle 3 (4).jpg"
+      /></a>
+      <a
+        style="width: 120px; height: 230px"
+        (click)="
+          updateCuffImage(
+            'angle',
+            '../../assets/image/singlet/cuff styles/angle(3).png'
+          )
+        "
+        ><img src="../../assets/image/singlet/cuff styles/angle(3).jpg"
+      /></a>
+      <a
+        style="width: 120px; height: 230px"
+        (click)="
+          updateCuffImage(
+            'ascend',
+            '../../assets/image/singlet/cuff styles/ascend (4).png'
+          )
+        "
+        ><img src="../../assets/image/singlet/cuff styles/ascend (4).jpg"
+      /></a>
+      <a
+        style="width: 120px; height: 230px"
+        (click)="
+          updateCuffImage(
+            'double line',
+            '../../assets/image/singlet/cuff styles/double line (5).png'
+          )
+        "
+        ><img src="../../assets/image/singlet/cuff styles/double line (5).jpg"
+      /></a>
+      <a
+        style="width: 120px; height: 230px"
+        (click)="
+          updateCuffImage(
+            'dounleline 2',
+            '../../assets/image/singlet/cuff styles/double line 2 (6).png'
+          )
+        "
+        ><img src="../../assets/image/singlet/cuff styles/dounleline 2 (6).jpg"
+      /></a>
+      <a
+        style="width: 120px; height: 230px"
+        (click)="
+          updateCuffImage(
+            'fade',
+            '../../assets/image/singlet/cuff styles/fade (7).png'
+          )
+        "
+        ><img src="../../assets/image/singlet/cuff styles/fade (7).jpg"
+      /></a>
+      <a
+        style="width: 120px; height: 230px"
+        (click)="
+          updateCuffImage(
+            'guardian',
+            '../../assets/image/singlet/cuff styles/guardian (8).png'
+          )
+        "
+        ><img src="../../assets/image/singlet/cuff styles/guardian (8).jpg"
+      /></a>
+      <a
+        style="width: 120px; height: 230px"
+        (click)="
+          updateCuffImage(
+            'hex armor',
+            '../../assets/image/singlet/cuff styles/hex armor (9).png'
+          )
+        "
+        ><img src="../../assets/image/singlet/cuff styles/hex armor (9).jpg"
+      /></a>
+      <a
+        style="width: 120px; height: 230px"
+        (click)="
+          updateCuffImage(
+            'inner drop',
+            '../../assets/image/singlet/cuff styles/inner drop (10).png'
+          )
+        "
+        ><img src="../../assets/image/singlet/cuff styles/inner drop (10).jpg"
+      /></a>
+      <a
+        style="width: 120px; height: 230px"
+        (click)="
+          updateCuffImage(
+            'pacific',
+            '../../assets/image/singlet/cuff styles/pacific(11).png'
+          )
+        "
+        ><img src="../../assets/image/singlet/cuff styles/pacific(11).jpg"
+      /></a>
+      <a
+        style="width: 120px; height: 230px"
+        (click)="
+          updateCuffImage(
+            'peak 1',
+            '../../assets/image/singlet/cuff styles/peak 1 (12).png'
+          )
+        "
+        ><img src="../../assets/image/singlet/cuff styles/peak 1 (12).jpg"
+      /></a>
+      <a
+        style="width: 120px; height: 230px"
+        (click)="
+          updateCuffImage(
+            'peak 2',
+            '../../assets/image/singlet/cuff styles/peak 2 (13).png'
+          )
+        "
+        ><img src="../../assets/image/singlet/cuff styles/peak 2 (13).jpg"
+      /></a>
+      <a
+        style="width: 120px; height: 230px"
+        (click)="
+          updateCuffImage(
+            'prime',
+            '../../assets/image/singlet/cuff styles/prime (14).png'
+          )
+        "
+        ><img src="../../assets/image/singlet/cuff styles/prime (14).jpg"
+      /></a>
+      <a
+        style="width: 120px; height: 230px"
+        (click)="
+          updateCuffImage(
+            'renegade',
+            '../../assets/image/singlet/cuff styles/renegade (15).png'
+          )
+        "
+        ><img src="../../assets/image/singlet/cuff styles/renegade (15).jpg"
+      /></a>
+      <a
+        style="width: 120px; height: 230px"
+        (click)="
+          updateCuffImage(
+            'rift',
+            '../../assets/image/singlet/cuff styles/rift (16).png'
+          )
+        "
+        ><img src="../../assets/image/singlet/cuff styles/rift (16).jpg"
+      /></a>
+      <a
+        style="width: 120px; height: 230px"
+        (click)="
+          updateCuffImage(
+            'sector',
+            '../../assets/image/singlet/cuff styles/sector (17).png'
+          )
+        "
+        ><img src="../../assets/image/singlet/cuff styles/sector (17).jpg"
+      /></a>
+      <a
+        style="width: 120px; height: 230px"
+        (click)="
+          updateCuffImage(
+            'solid 1',
+            '../../assets/image/singlet/cuff styles/solid 1 (18).png'
+          )
+        "
+        ><img src="../../assets/image/singlet/cuff styles/solid 1 (18).jpg"
+      /></a>
+      <a
+        style="width: 120px; height: 230px"
+        (click)="
+          updateCuffImage(
+            'solid 1-disstressed',
+            '../../assets/image/singlet/cuff styles/solid 1-disstressed (19).png'
+          )
+        "
+        ><img
+          src="../../assets/image/singlet/cuff styles/solid 1-disstressed (19).jpg"
+      /></a>
+      <a
+        style="width: 120px; height: 230px"
+        (click)="
+          updateCuffImage(
+            'solid 2',
+            '../../assets/image/singlet/cuff styles/solid 2 (20).png'
+          )
+        "
+        ><img src="../../assets/image/singlet/cuff styles/solid 2 (20).jpg"
+      /></a>
+      <a
+        style="width: 120px; height: 230px"
+        (click)="
+          updateCuffImage(
+            'spec 3',
+            '../../assets/image/singlet/cuff styles/spec 3 (21).png'
+          )
+        "
+        ><img src="../../assets/image/singlet/cuff styles/spec 3 (21).jpg"
+      /></a>
+      <a
+        style="width: 120px; height: 230px"
+        (click)="
+          updateCuffImage(
+            'spikes 1',
+            '../../assets/image/singlet/cuff styles/spikes 1 (22).png'
+          )
+        "
+        ><img src="../../assets/image/singlet/cuff styles/spikes 1 (22).jpg"
+      /></a>
+      <a
+        style="width: 120px; height: 230px"
+        (click)="
+          updateCuffImage(
+            'spikes 2',
+            '../../assets/image/singlet/cuff styles/spikes 2 (23).png'
+          )
+        "
+        ><img src="../../assets/image/singlet/cuff styles/spikes 2 (23).jpg"
+      /></a>
+      <a
+        style="width: 120px; height: 230px"
+        (click)="
+          updateCuffImage(
+            'swoop',
+            '../../assets/image/singlet/cuff styles/swoop (24).png'
+          )
+        "
+        ><img src="../../assets/image/singlet/cuff styles/swoop (24).jpg"
+      /></a>
+      <a
+        style="width: 120px; height: 230px"
+        (click)="
+          updateCuffImage(
+            'triple line',
+            '../../assets/image/singlet/cuff styles/triple line (25).png'
+          )
+        "
+        ><img src="../../assets/image/singlet/cuff styles/triple line (25).jpg"
+      /></a>
+      <a
+        style="width: 120px; height: 230px"
+        (click)="
+          updateCuffImage(
+            'tristar',
+            '../../assets/image/singlet/cuff styles/tristar (26).png'
+          )
+        "
+        ><img src="../../assets/image/singlet/cuff styles/tristar (26).jpg"
+      /></a>
+      <a
+        style="width: 120px; height: 230px"
+        (click)="
+          updateCuffImage(
+            'venom',
+            '../../assets/image/singlet/cuff styles/venom (27).png'
+          )
+        "
+        ><img src="../../assets/image/singlet/cuff styles/venom (27).jpg"
+      /></a>
+    </div>
+  </div>
+
+  <!-- ############################### Cuff color ####################### -->
+  <div class="col-8 column mx-2 col3" [style.display]="cuff_color">
+    <div id="clrList" class="flex">
+      <a
+        style="background-color: #000000"
+        (click)="updateCuffColor('#000000', 'brightness(0) saturate(100%)')"
+        data-name="Black"
+        class="ui-link"
+        #myAnchor
+        >Black</a
+      ><a
+        style="background-color: #ffffff; color: #000000"
+        (click)="
+          updateCuffColor(
+            '#ffffff',
+            'brightness(0) saturate(100%) invert(92%) sepia(47%) saturate(17%) hue-rotate(296deg) brightness(107%) contrast(100%)'
+          )
+        "
+        data-name="White"
+        class="ui-link"
+        #myAnchor
+        >White</a
+      ><a
+        style="background-color: #414042; color: #ffffff"
+        (click)="
+          updateCuffColor(
+            '#939598',
+            ' brightness(96%) invert(37%) sepia(5%) saturate(169%) hue-rotate(182deg)  contrast(90%)'
+          )
+        "
+        data-name="Char-Gray"
+        class="ui-link"
+        #myAnchor
+        >Dark Gray</a
+      ><a
+        style="background-color: #939598; color: #ffffff"
+        (click)="
+          updateCuffColor(
+            '#414042',
+            ' brightness(89%) invert(77%) sepia(6%) saturate(232%) hue-rotate(224deg)  contrast(86%)'
+          )
+        "
+        data-name="Gray"
+        class="ui-link"
+        #myAnchor
+        >Gray</a
+      ><a
+        style="background-color: #c7c8ca; color: #000000"
+        (click)="
+          updateCuffColor(
+            '#c7c8ca',
+            ' brightness(99%) invert(18%) sepia(0%) saturate(2697%) hue-rotate(287deg)  contrast(88%)'
+          )
+        "
+        data-name="Silver"
+        class="ui-link"
+        #myAnchor
+        >Silver</a
+      ><a
+        style="background-color: #cf0a2c; color: #ffffff"
+        (click)="
+          updateCuffColor(
+            '#cf0a2c',
+            ' brightness(0) saturate(100%) invert(21%) sepia(58%) saturate(5843%) hue-rotate(334deg) brightness(74%) contrast(131%)'
+          )
+        "
+        data-name="Bright-Red"
+        class="ui-link"
+        #myAnchor
+        >Bright Red</a
+      ><a
+        style="background-color: #ac162c; color: #ffffff"
+        (click)="
+          updateCuffColor(
+            '#ac162c',
+            ' brightness(0) saturate(100%) invert(24%) sepia(40%) saturate(3446%) hue-rotate(328deg) brightness(79%) contrast(112%)'
+          )
+        "
+        data-name="Red"
+        class="ui-link"
+        #myAnchor
+        >Red</a
+      ><a
+        style="background-color: #7a232e; color: #ffffff"
+        (click)="
+          updateCuffColor(
+            '#7a232e',
+            ' brightness(0) saturate(100%) invert(15%) sepia(26%) saturate(5403%) hue-rotate(331deg) brightness(95%) contrast(89%)'
+          )
+        "
+        data-name="Maroon"
+        class="ui-link"
+        #myAnchor
+        >Maroon</a
+      ><a
+        style="background-color: #6a1b32; color: #ffffff"
+        (click)="
+          updateCuffColor(
+            '#6a1b32',
+            ' brightness(0) saturate(100%) invert(12%) sepia(69%) saturate(2082%) hue-rotate(318deg) brightness(100%) contrast(93%)'
+          )
+        "
+        data-name="Dark-Maroon"
+        class="ui-link"
+        #myAnchor
+        >Dark Maroon</a
+      ><a
+        style="background-color: #a41f35; color: #ffffff"
+        (click)="
+          updateCuffColor(
+            '#a41f35',
+            ' brightness(0) saturate(100%) invert(16%) sepia(60%) saturate(3578%) hue-rotate(334deg) brightness(91%) contrast(93%)'
+          )
+        "
+        data-name="Cardinal-Red"
+        class="ui-link"
+        #myAnchor
+        >Cardinal Red</a
+      ><a
+        style="background-color: #c12033; color: #ffffff"
+        (click)="
+          updateCuffColor(
+            '#c12033',
+            ' brightness(0) saturate(100%) invert(18%) sepia(60%) saturate(2494%) hue-rotate(331deg) brightness(113%) contrast(105%)'
+          )
+        "
+        class="lesspad ui-link"
+        #myAnchor
+        data-name="Scarlet-Red"
+        >Scarlet Red (Ohio State)</a
+      ><a
+        style="background-color: #ef3824; color: #ffffff"
+        (click)="
+          updateCuffColor(
+            '#ef3824',
+            ' brightness(0) saturate(100%) invert(27%) sepia(81%) saturate(4940%) hue-rotate(351deg) brightness(108%) contrast(87%)'
+          )
+        "
+        data-name="RedOrange"
+        class="ui-link"
+        #myAnchor
+        >Red Orange</a
+      ><a
+        style="background-color: #ff4717; color: #ffffff"
+        (click)="
+          updateCuffColor(
+            '#ff4717',
+            ' brightness(0) saturate(100%) invert(35%) sepia(69%) saturate(3651%) hue-rotate(351deg) brightness(107%) contrast(103%)'
+          )
+        "
+        data-name="Orange"
+        class="ui-link"
+        #myAnchor
+        >Bright Orange</a
+      ><a
+        style="background-color: #ff8300; color: #ffffff"
+        (click)="
+          updateCuffColor(
+            '#ff8300',
+            ' brightness(0) saturate(100%) invert(57%) sepia(93%) saturate(2608%) hue-rotate(359deg) brightness(101%) contrast(107%)'
+          )
+        "
+        data-name="NewOrange"
+        class="ui-link"
+        #myAnchor
+        >Orange</a
+      ><a
+        style="background-color: #d15e14; color: #ffffff"
+        (click)="
+          updateCuffColor(
+            '#d15e14',
+            ' brightness(0) saturate(100%) invert(37%) sepia(93%) saturate(865%) hue-rotate(354deg) brightness(94%) contrast(92%)'
+          )
+        "
+        class="lesspad ui-link"
+        #myAnchor
+        data-name="Texas-Orange"
+        >Burnt Orange (Texas Orange)</a
+      ><a
+        style="background-color: #ece83a; color: #000000"
+        (click)="
+          updateCuffColor(
+            '#ece83a',
+            ' brightness(0) saturate(100%) invert(91%) sepia(45%) saturate(751%) hue-rotate(356deg) brightness(96%) contrast(92%)'
+          )
+        "
+        data-name="NeonYellow"
+        class="ui-link"
+        #myAnchor
+        >Neon Yellow</a
+      ><a
+        style="background-color: #ffdd00; color: #000000"
+        (click)="
+          updateCuffColor(
+            '#ffdd00',
+            ' brightness(0) saturate(100%) invert(71%) sepia(94%) saturate(559%) hue-rotate(360deg) brightness(107%) contrast(103%)'
+          )
+        "
+        data-name="Yellow"
+        class="ui-link"
+        #myAnchor
+        >Yellow</a
+      ><a
+        style="background-color: #ffc627; color: #ffffff"
+        (click)="
+          updateCuffColor(
+            '#ffc627',
+            ' brightness(0) saturate(100%) invert(84%) sepia(93%) saturate(2984%) hue-rotate(327deg) brightness(98%) contrast(105%)'
+          )
+        "
+        data-name="Athletic-Gold"
+        class="ui-link"
+        #myAnchor
+        >Athletic Gold</a
+      ><a
+        style="background-color: #eba900; color: #ffffff"
+        (click)="
+          updateCuffColor(
+            '#eba900',
+            ' brightness(0) saturate(100%) invert(50%) sepia(92%) saturate(604%) hue-rotate(11deg) brightness(108%) contrast(101%)'
+          )
+        "
+        data-name="Athletic-Gold-Dark"
+        class="ui-link"
+        #myAnchor
+        >Athletic Gold (Dark)</a
+      ><a
+        style="background-color: #77bc1f; color: #ffffff"
+        (click)="
+          updateCuffColor(
+            '#77bc1f',
+            ' brightness(0) saturate(100%) invert(77%) sepia(19%) saturate(5576%) hue-rotate(40deg) brightness(95%) contrast(76%)'
+          )
+        "
+        data-name="Bright-Green"
+        class="ui-link"
+        #myAnchor
+        >Bright Green</a
+      ><a
+        style="background-color: #50b848; color: #ffffff"
+        (click)="
+          updateCuffColor(
+            '#50b848',
+            ' brightness(0) saturate(100%) invert(63%) sepia(40%) saturate(726%) hue-rotate(68deg) brightness(91%) contrast(82%)'
+          )
+        "
+        data-name="Grass-Green"
+        class="ui-link"
+        #myAnchor
+        >Grass Green</a
+      ><a
+        style="background-color: #00833e; color: #ffffff"
+        (click)="
+          updateCuffColor(
+            '#00833e',
+            ' brightness(0) saturate(100%) invert(32%) sepia(98%) saturate(764%) hue-rotate(111deg) brightness(91%) contrast(101%)'
+          )
+        "
+        data-name="Kelly-Green"
+        class="ui-link"
+        #myAnchor
+        >Kelly Green</a
+      ><a
+        style="background-color: #0e553f; color: #ffffff"
+        (click)="
+          updateCuffColor(
+            '#0e553f',
+            ' brightness(0) saturate(100%) invert(22%) sepia(83%) saturate(420%) hue-rotate(110deg) brightness(96%) contrast(93%)'
+          )
+        "
+        data-name="Forest-Green"
+        class="ui-link"
+        #myAnchor
+        >Forest Green</a
+      ><a
+        style="background-color: #124734; color: #ffffff"
+        (click)="
+          updateCuffColor(
+            '#124734',
+            ' brightness(0) saturate(100%) invert(20%) sepia(49%) saturate(601%) hue-rotate(107deg) brightness(94%) contrast(93%)'
+          )
+        "
+        data-name="Hunter-Green"
+        class="ui-link"
+        #myAnchor
+        >Hunter Green</a
+      ><a
+        style="background-color: #4e5a30; color: #ffffff"
+        (click)="
+          updateCuffColor(
+            '#4e5a30',
+            ' brightness(0) saturate(100%) invert(30%) sepia(52%) saturate(350%) hue-rotate(36deg) brightness(94%) contrast(91%)'
+          )
+        "
+        data-name="Military-Green"
+        class="ui-link"
+        #myAnchor
+        >Army Green</a
+      ><a
+        style="background-color: #00665e; color: #ffffff"
+        (click)="
+          updateCuffColor(
+            '#00665e',
+            ' brightness(0) saturate(100%) invert(12%) sepia(91%) saturate(4703%) hue-rotate(171deg) brightness(98%) contrast(101%)'
+          )
+        "
+        data-name="Teal"
+        class="ui-link"
+        #myAnchor
+        >Teal</a
+      ><a
+        style="background-color: #00afaa; color: #ffffff"
+        (click)="
+          updateCuffColor(
+            '#00afaa',
+            ' brightness(0) saturate(100%) invert(47%) sepia(88%) saturate(2890%) hue-rotate(148deg) brightness(98%) contrast(101%)'
+          )
+        "
+        data-name="Turquoise"
+        class="ui-link"
+        #myAnchor
+        >Turquoise</a
+      ><a
+        style="background-color: #6ecb98; color: #ffffff"
+        (click)="
+          updateCuffColor(
+            '#6ecb98',
+            ' brightness(0) saturate(100%) invert(81%) sepia(22%) saturate(697%) hue-rotate(93deg) brightness(87%) contrast(89%)'
+          )
+        "
+        data-name="Sea-Green"
+        class="ui-link"
+        #myAnchor
+        >Sea Green</a
+      ><a
+        style="background-color: #8db8e9; color: #ffffff"
+        (click)="
+          updateCuffColor(
+            '#8db8e9',
+            ' brightness(0) saturate(100%) invert(74%) sepia(12%) saturate(1117%) hue-rotate(174deg) brightness(93%) contrast(95%)'
+          )
+        "
+        data-name="Carolina-Blue"
+        class="ui-link"
+        #myAnchor
+        >Carolina Blue</a
+      ><a
+        style="background-color: #00a7e1; color: #ffffff"
+        (click)="
+          updateCuffColor(
+            '#00a7e1',
+            ' brightness(0) saturate(100%) invert(64%) sepia(96%) saturate(4923%) hue-rotate(167deg) brightness(102%) contrast(101%)'
+          )
+        "
+        data-name="Cyan"
+        class="ui-link"
+        #myAnchor
+        >Cyan</a
+      ><a
+        style="background-color: #0082be; color: #ffffff"
+        (click)="
+          updateCuffColor(
+            '#0082be',
+            ' brightness(0) saturate(100%) invert(31%) sepia(88%) saturate(2648%) hue-rotate(178deg) brightness(92%) contrast(102%)'
+          )
+        "
+        data-name="Bright-Blue"
+        class="ui-link"
+        #myAnchor
+        >Bright Blue</a
+      ><a
+        style="background-color: #0039a6; color: #ffffff"
+        (click)="
+          updateCuffColor(
+            '#0039a6',
+            ' brightness(0) saturate(100%) invert(20%) sepia(26%) saturate(6893%) hue-rotate(211deg) brightness(86%) contrast(113%)'
+          )
+        "
+        data-name="Royal-Blue"
+        class="ui-link"
+        #myAnchor
+        >Royal Blue</a
+      ><a
+        style="background-color: #002d74; color: #ffffff"
+        (click)="
+          updateCuffColor(
+            '#002d74',
+            ' brightness(0) saturate(100%) invert(11%) sepia(68%) saturate(3764%) hue-rotate(209deg) brightness(96%) contrast(105%)'
+          )
+        "
+        data-name="Royal-Blue-Dark"
+        class="ui-link"
+        #myAnchor
+        >Royal Blue (Dark)</a
+      ><a
+        style="background-color: #002144; color: #ffffff"
+        (click)="
+          updateCuffColor(
+            '#002144',
+            ' brightness(0) saturate(100%) invert(10%) sepia(65%) saturate(1875%) hue-rotate(187deg) brightness(99%) contrast(106%)'
+          )
+        "
+        data-name="Navy-Blue"
+        class="ui-link"
+        #myAnchor
+        >Navy Blue</a
+      ><a
+        style="background-color: #333e48; color: #ffffff"
+        (click)="
+          updateCuffColor(
+            '#333e48',
+            ' brightness(0) saturate(100%) invert(18%) sepia(13%) saturate(938%) hue-rotate(167deg) brightness(99%) contrast(84%)'
+          )
+        "
+        data-name="Gunmetal-Blue"
+        class="ui-link"
+        #myAnchor
+        >Gunmetal Blue</a
+      ><a
+        style="background-color: #9164cc; color: #ffffff"
+        (click)="
+          updateCuffColor(
+            '#9164cc',
+            ' brightness(0) saturate(100%) invert(59%) sepia(40%) saturate(4391%) hue-rotate(226deg) brightness(82%) contrast(93%)'
+          )
+        "
+        data-name="Light-Purple"
+        class="ui-link"
+        #myAnchor
+        >Light Purple</a
+      ><a
+        style="background-color: #5b2d82; color: #ffffff"
+        (click)="
+          updateCuffColor(
+            '#5b2d82',
+            ' brightness(0) saturate(100%) invert(22%) sepia(28%) saturate(3010%) hue-rotate(246deg) brightness(92%) contrast(96%)'
+          )
+        "
+        data-name="Purple"
+        class="ui-link"
+        #myAnchor
+        >Purple</a
+      ><a
+        style="background-color: #43235f; color: #ffffff"
+        (click)="
+          updateCuffColor(
+            '#43235f',
+            ' brightness(0) saturate(100%) invert(15%) sepia(14%) saturate(5774%) hue-rotate(245deg) brightness(96%) contrast(95%)'
+          )
+        "
+        data-name="Dk-Purple"
+        class="ui-link"
+        #myAnchor
+        >Dark Purple</a
+      ><a
+        style="background-color: #a98c3d; color: #ffffff"
+        (click)="
+          updateCuffColor(
+            '#a98c3d',
+            ' brightness(0) saturate(100%) invert(48%) sepia(35%) saturate(711%) hue-rotate(6deg) brightness(110%) contrast(82%)'
+          )
+        "
+        data-name="Old-Gold"
+        class="ui-link"
+        #myAnchor
+        >Old Gold</a
+      ><a
+        style="background-color: #cfae7b; color: #ffffff"
+        (click)="
+          updateCuffColor(
+            '#cfae7b',
+            ' brightness(0) saturate(100%) invert(79%) sepia(47%) saturate(320%) hue-rotate(349deg) brightness(85%) contrast(90%)'
+          )
+        "
+        data-name="Vegas-Gold"
+        class="ui-link"
+        #myAnchor
+        >Vegas Gold</a
+      ><a
+        style="background-color: #cfc393; color: #ffffff"
+        (click)="
+          updateCuffColor(
+            '#cfc393',
+            ' brightness(0) saturate(100%) invert(85%) sepia(6%) saturate(1686%) hue-rotate(11deg) brightness(96%) contrast(81%)'
+          )
+        "
+        class="lesspad ui-link"
+        #myAnchor
+        data-name="Vegas-Gold-Pitt"
+        >Vegas Gold (Light)</a
+      ><a
+        style="background-color: #e2d0a6; color: #000000"
+        (click)="
+          updateCuffColor(
+            '#e2d0a6',
+            ' brightness(0) saturate(100%) invert(85%) sepia(36%) saturate(239%) hue-rotate(1deg) brightness(94%) contrast(89%)'
+          )
+        "
+        data-name="Neutral"
+        class="ui-link"
+        #myAnchor
+        >Neutral</a
+      ><a
+        style="background-color: #b07c57; color: #ffffff"
+        (click)="
+          updateCuffColor(
+            '#b07c57',
+            ' brightness(0) saturate(100%) invert(61%) sepia(10%) saturate(1687%) hue-rotate(342deg) brightness(83%) contrast(88%)'
+          )
+        "
+        data-name="Light-Brown"
+        class="ui-link"
+        #myAnchor
+        >Light Brown</a
+      ><a
+        style="background-color: #753d29; color: #ffffff"
+        (click)="
+          updateCuffColor(
+            '#753d29',
+            ' brightness(0) saturate(100%) invert(25%) sepia(11%) saturate(3842%) hue-rotate(332deg) brightness(89%) contrast(82%)'
+          )
+        "
+        data-name="Brown"
+        class="ui-link"
+        #myAnchor
+        >Brown</a
+      ><a
+        style="background-color: #4b3d2a; color: #ffffff"
+        (click)="
+          updateCuffColor(
+            '#4b3d2a',
+            ' brightness(0) saturate(100%) invert(23%) sepia(20%) saturate(768%) hue-rotate(355deg) brightness(93%) contrast(92%)'
+          )
+        "
+        data-name="Dark-Brown"
+        class="ui-link"
+        #myAnchor
+        >Dark Brown</a
+      ><a
+        style="background-color: #ed80a8; color: #ffffff"
+        (click)="
+          updateCuffColor(
+            '#ed80a8',
+            ' brightness(0) saturate(100%) invert(87%) sepia(21%) saturate(6603%) hue-rotate(292deg) brightness(95%) contrast(95%)'
+          )
+        "
+        data-name="Pink"
+        class="ui-link"
+        #myAnchor
+        >Pink</a
+      ><a
+        style="background-color: #d50071; color: #ffffff"
+        (click)="
+          updateCuffColor(
+            '#d50071',
+            ' brightness(0) saturate(100%) invert(16%) sepia(60%) saturate(5776%) hue-rotate(316deg) brightness(84%) contrast(113%)'
+          )
+        "
+        data-name="Fuchsia"
+        class="ui-link"
+        #myAnchor
+        >Hot Pink</a
+      ><a
+        style="background-color: #b94197; color: #ffffff"
+        (click)="
+          updateCuffColor(
+            '#b94197',
+            ' brightness(0) saturate(100%) invert(38%) sepia(35%) saturate(1140%) hue-rotate(265deg) brightness(92%) contrast(97%)'
+          )
+        "
+        data-name="Magenta"
+        class="ui-link"
+        #myAnchor
+        >Magenta</a
+      >
+    </div>
+  </div>
+
+  <!-- // piping color  -->
+  <div class="col-8 column mx-2 col3" [style.display]="piping_color">
+    <div id="clrList" class="flex">
+      <a
+        style="background-color: #000000"
+        (click)="pipinColor('#000000', 'brightness(0) saturate(100%)')"
+        data-name="Black"
+        class="ui-link"
+        #myAnchor
+        >Black</a
+      ><a
+        style="background-color: #ffffff; color: #000000"
+        (click)="
+          pipinColor(
+            '#ffffff',
+            'brightness(0) saturate(100%) invert(92%) sepia(47%) saturate(17%) hue-rotate(296deg) brightness(107%) contrast(100%)'
+          )
+        "
+        data-name="White"
+        class="ui-link"
+        #myAnchor
+        >White</a
+      ><a
+        style="background-color: #414042; color: #ffffff"
+        (click)="
+          pipinColor(
+            '#939598',
+            ' brightness(96%) invert(37%) sepia(5%) saturate(169%) hue-rotate(182deg)  contrast(90%)'
+          )
+        "
+        data-name="Char-Gray"
+        class="ui-link"
+        #myAnchor
+        >Dark Gray</a
+      ><a
+        style="background-color: #939598; color: #ffffff"
+        (click)="
+          pipinColor(
+            '#414042',
+            ' brightness(89%) invert(77%) sepia(6%) saturate(232%) hue-rotate(224deg)  contrast(86%)'
+          )
+        "
+        data-name="Gray"
+        class="ui-link"
+        #myAnchor
+        >Gray</a
+      ><a
+        style="background-color: #c7c8ca; color: #000000"
+        (click)="
+          pipinColor(
+            '#c7c8ca',
+            ' brightness(99%) invert(18%) sepia(0%) saturate(2697%) hue-rotate(287deg)  contrast(88%)'
+          )
+        "
+        data-name="Silver"
+        class="ui-link"
+        #myAnchor
+        >Silver</a
+      ><a
+        style="background-color: #cf0a2c; color: #ffffff"
+        (click)="
+          pipinColor(
+            '#cf0a2c',
+            ' brightness(0) saturate(100%) invert(21%) sepia(58%) saturate(5843%) hue-rotate(334deg) brightness(74%) contrast(131%)'
+          )
+        "
+        data-name="Bright-Red"
+        class="ui-link"
+        #myAnchor
+        >Bright Red</a
+      ><a
+        style="background-color: #ac162c; color: #ffffff"
+        (click)="
+          pipinColor(
+            '#ac162c',
+            ' brightness(0) saturate(100%) invert(24%) sepia(40%) saturate(3446%) hue-rotate(328deg) brightness(79%) contrast(112%)'
+          )
+        "
+        data-name="Red"
+        class="ui-link"
+        #myAnchor
+        >Red</a
+      ><a
+        style="background-color: #7a232e; color: #ffffff"
+        (click)="
+          pipinColor(
+            '#7a232e',
+            ' brightness(0) saturate(100%) invert(15%) sepia(26%) saturate(5403%) hue-rotate(331deg) brightness(95%) contrast(89%)'
+          )
+        "
+        data-name="Maroon"
+        class="ui-link"
+        #myAnchor
+        >Maroon</a
+      ><a
+        style="background-color: #6a1b32; color: #ffffff"
+        (click)="
+          pipinColor(
+            '#6a1b32',
+            ' brightness(0) saturate(100%) invert(12%) sepia(69%) saturate(2082%) hue-rotate(318deg) brightness(100%) contrast(93%)'
+          )
+        "
+        data-name="Dark-Maroon"
+        class="ui-link"
+        #myAnchor
+        >Dark Maroon</a
+      ><a
+        style="background-color: #a41f35; color: #ffffff"
+        (click)="
+          pipinColor(
+            '#a41f35',
+            ' brightness(0) saturate(100%) invert(16%) sepia(60%) saturate(3578%) hue-rotate(334deg) brightness(91%) contrast(93%)'
+          )
+        "
+        data-name="Cardinal-Red"
+        class="ui-link"
+        #myAnchor
+        >Cardinal Red</a
+      ><a
+        style="background-color: #c12033; color: #ffffff"
+        (click)="
+          pipinColor(
+            '#c12033',
+            ' brightness(0) saturate(100%) invert(18%) sepia(60%) saturate(2494%) hue-rotate(331deg) brightness(113%) contrast(105%)'
+          )
+        "
+        class="lesspad ui-link"
+        #myAnchor
+        data-name="Scarlet-Red"
+        >Scarlet Red (Ohio State)</a
+      ><a
+        style="background-color: #ef3824; color: #ffffff"
+        (click)="
+          pipinColor(
+            '#ef3824',
+            ' brightness(0) saturate(100%) invert(27%) sepia(81%) saturate(4940%) hue-rotate(351deg) brightness(108%) contrast(87%)'
+          )
+        "
+        data-name="RedOrange"
+        class="ui-link"
+        #myAnchor
+        >Red Orange</a
+      ><a
+        style="background-color: #ff4717; color: #ffffff"
+        (click)="
+          pipinColor(
+            '#ff4717',
+            ' brightness(0) saturate(100%) invert(35%) sepia(69%) saturate(3651%) hue-rotate(351deg) brightness(107%) contrast(103%)'
+          )
+        "
+        data-name="Orange"
+        class="ui-link"
+        #myAnchor
+        >Bright Orange</a
+      ><a
+        style="background-color: #ff8300; color: #ffffff"
+        (click)="
+          pipinColor(
+            '#ff8300',
+            ' brightness(0) saturate(100%) invert(57%) sepia(93%) saturate(2608%) hue-rotate(359deg) brightness(101%) contrast(107%)'
+          )
+        "
+        data-name="NewOrange"
+        class="ui-link"
+        #myAnchor
+        >Orange</a
+      ><a
+        style="background-color: #d15e14; color: #ffffff"
+        (click)="
+          pipinColor(
+            '#d15e14',
+            ' brightness(0) saturate(100%) invert(37%) sepia(93%) saturate(865%) hue-rotate(354deg) brightness(94%) contrast(92%)'
+          )
+        "
+        class="lesspad ui-link"
+        #myAnchor
+        data-name="Texas-Orange"
+        >Burnt Orange (Texas Orange)</a
+      ><a
+        style="background-color: #ece83a; color: #000000"
+        (click)="
+          pipinColor(
+            '#ece83a',
+            ' brightness(0) saturate(100%) invert(91%) sepia(45%) saturate(751%) hue-rotate(356deg) brightness(96%) contrast(92%)'
+          )
+        "
+        data-name="NeonYellow"
+        class="ui-link"
+        #myAnchor
+        >Neon Yellow</a
+      ><a
+        style="background-color: #ffdd00; color: #000000"
+        (click)="
+          pipinColor(
+            '#ffdd00',
+            ' brightness(0) saturate(100%) invert(71%) sepia(94%) saturate(559%) hue-rotate(360deg) brightness(107%) contrast(103%)'
+          )
+        "
+        data-name="Yellow"
+        class="ui-link"
+        #myAnchor
+        >Yellow</a
+      ><a
+        style="background-color: #ffc627; color: #ffffff"
+        (click)="
+          pipinColor(
+            '#ffc627',
+            ' brightness(0) saturate(100%) invert(84%) sepia(93%) saturate(2984%) hue-rotate(327deg) brightness(98%) contrast(105%)'
+          )
+        "
+        data-name="Athletic-Gold"
+        class="ui-link"
+        #myAnchor
+        >Athletic Gold</a
+      ><a
+        style="background-color: #eba900; color: #ffffff"
+        (click)="
+          pipinColor(
+            '#eba900',
+            ' brightness(0) saturate(100%) invert(50%) sepia(92%) saturate(604%) hue-rotate(11deg) brightness(108%) contrast(101%)'
+          )
+        "
+        data-name="Athletic-Gold-Dark"
+        class="ui-link"
+        #myAnchor
+        >Athletic Gold (Dark)</a
+      ><a
+        style="background-color: #77bc1f; color: #ffffff"
+        (click)="
+          pipinColor(
+            '#77bc1f',
+            ' brightness(0) saturate(100%) invert(77%) sepia(19%) saturate(5576%) hue-rotate(40deg) brightness(95%) contrast(76%)'
+          )
+        "
+        data-name="Bright-Green"
+        class="ui-link"
+        #myAnchor
+        >Bright Green</a
+      ><a
+        style="background-color: #50b848; color: #ffffff"
+        (click)="
+          pipinColor(
+            '#50b848',
+            ' brightness(0) saturate(100%) invert(63%) sepia(40%) saturate(726%) hue-rotate(68deg) brightness(91%) contrast(82%)'
+          )
+        "
+        data-name="Grass-Green"
+        class="ui-link"
+        #myAnchor
+        >Grass Green</a
+      ><a
+        style="background-color: #00833e; color: #ffffff"
+        (click)="
+          pipinColor(
+            '#00833e',
+            ' brightness(0) saturate(100%) invert(32%) sepia(98%) saturate(764%) hue-rotate(111deg) brightness(91%) contrast(101%)'
+          )
+        "
+        data-name="Kelly-Green"
+        class="ui-link"
+        #myAnchor
+        >Kelly Green</a
+      ><a
+        style="background-color: #0e553f; color: #ffffff"
+        (click)="
+          pipinColor(
+            '#0e553f',
+            ' brightness(0) saturate(100%) invert(22%) sepia(83%) saturate(420%) hue-rotate(110deg) brightness(96%) contrast(93%)'
+          )
+        "
+        data-name="Forest-Green"
+        class="ui-link"
+        #myAnchor
+        >Forest Green</a
+      ><a
+        style="background-color: #124734; color: #ffffff"
+        (click)="
+          pipinColor(
+            '#124734',
+            ' brightness(0) saturate(100%) invert(20%) sepia(49%) saturate(601%) hue-rotate(107deg) brightness(94%) contrast(93%)'
+          )
+        "
+        data-name="Hunter-Green"
+        class="ui-link"
+        #myAnchor
+        >Hunter Green</a
+      ><a
+        style="background-color: #4e5a30; color: #ffffff"
+        (click)="
+          pipinColor(
+            '#4e5a30',
+            ' brightness(0) saturate(100%) invert(30%) sepia(52%) saturate(350%) hue-rotate(36deg) brightness(94%) contrast(91%)'
+          )
+        "
+        data-name="Military-Green"
+        class="ui-link"
+        #myAnchor
+        >Army Green</a
+      ><a
+        style="background-color: #00665e; color: #ffffff"
+        (click)="
+          pipinColor(
+            '#00665e',
+            ' brightness(0) saturate(100%) invert(12%) sepia(91%) saturate(4703%) hue-rotate(171deg) brightness(98%) contrast(101%)'
+          )
+        "
+        data-name="Teal"
+        class="ui-link"
+        #myAnchor
+        >Teal</a
+      ><a
+        style="background-color: #00afaa; color: #ffffff"
+        (click)="
+          pipinColor(
+            '#00afaa',
+            ' brightness(0) saturate(100%) invert(47%) sepia(88%) saturate(2890%) hue-rotate(148deg) brightness(98%) contrast(101%)'
+          )
+        "
+        data-name="Turquoise"
+        class="ui-link"
+        #myAnchor
+        >Turquoise</a
+      ><a
+        style="background-color: #6ecb98; color: #ffffff"
+        (click)="
+          pipinColor(
+            '#6ecb98',
+            ' brightness(0) saturate(100%) invert(81%) sepia(22%) saturate(697%) hue-rotate(93deg) brightness(87%) contrast(89%)'
+          )
+        "
+        data-name="Sea-Green"
+        class="ui-link"
+        #myAnchor
+        >Sea Green</a
+      ><a
+        style="background-color: #8db8e9; color: #ffffff"
+        (click)="
+          pipinColor(
+            '#8db8e9',
+            ' brightness(0) saturate(100%) invert(74%) sepia(12%) saturate(1117%) hue-rotate(174deg) brightness(93%) contrast(95%)'
+          )
+        "
+        data-name="Carolina-Blue"
+        class="ui-link"
+        #myAnchor
+        >Carolina Blue</a
+      ><a
+        style="background-color: #00a7e1; color: #ffffff"
+        (click)="
+          pipinColor(
+            '#00a7e1',
+            ' brightness(0) saturate(100%) invert(64%) sepia(96%) saturate(4923%) hue-rotate(167deg) brightness(102%) contrast(101%)'
+          )
+        "
+        data-name="Cyan"
+        class="ui-link"
+        #myAnchor
+        >Cyan</a
+      ><a
+        style="background-color: #0082be; color: #ffffff"
+        (click)="
+          pipinColor(
+            '#0082be',
+            ' brightness(0) saturate(100%) invert(31%) sepia(88%) saturate(2648%) hue-rotate(178deg) brightness(92%) contrast(102%)'
+          )
+        "
+        data-name="Bright-Blue"
+        class="ui-link"
+        #myAnchor
+        >Bright Blue</a
+      ><a
+        style="background-color: #0039a6; color: #ffffff"
+        (click)="
+          pipinColor(
+            '#0039a6',
+            ' brightness(0) saturate(100%) invert(20%) sepia(26%) saturate(6893%) hue-rotate(211deg) brightness(86%) contrast(113%)'
+          )
+        "
+        data-name="Royal-Blue"
+        class="ui-link"
+        #myAnchor
+        >Royal Blue</a
+      ><a
+        style="background-color: #002d74; color: #ffffff"
+        (click)="
+          pipinColor(
+            '#002d74',
+            ' brightness(0) saturate(100%) invert(11%) sepia(68%) saturate(3764%) hue-rotate(209deg) brightness(96%) contrast(105%)'
+          )
+        "
+        data-name="Royal-Blue-Dark"
+        class="ui-link"
+        #myAnchor
+        >Royal Blue (Dark)</a
+      ><a
+        style="background-color: #002144; color: #ffffff"
+        (click)="
+          pipinColor(
+            '#002144',
+            ' brightness(0) saturate(100%) invert(10%) sepia(65%) saturate(1875%) hue-rotate(187deg) brightness(99%) contrast(106%)'
+          )
+        "
+        data-name="Navy-Blue"
+        class="ui-link"
+        #myAnchor
+        >Navy Blue</a
+      ><a
+        style="background-color: #333e48; color: #ffffff"
+        (click)="
+          pipinColor(
+            '#333e48',
+            ' brightness(0) saturate(100%) invert(18%) sepia(13%) saturate(938%) hue-rotate(167deg) brightness(99%) contrast(84%)'
+          )
+        "
+        data-name="Gunmetal-Blue"
+        class="ui-link"
+        #myAnchor
+        >Gunmetal Blue</a
+      ><a
+        style="background-color: #9164cc; color: #ffffff"
+        (click)="
+          pipinColor(
+            '#9164cc',
+            ' brightness(0) saturate(100%) invert(59%) sepia(40%) saturate(4391%) hue-rotate(226deg) brightness(82%) contrast(93%)'
+          )
+        "
+        data-name="Light-Purple"
+        class="ui-link"
+        #myAnchor
+        >Light Purple</a
+      ><a
+        style="background-color: #5b2d82; color: #ffffff"
+        (click)="
+          pipinColor(
+            '#5b2d82',
+            ' brightness(0) saturate(100%) invert(22%) sepia(28%) saturate(3010%) hue-rotate(246deg) brightness(92%) contrast(96%)'
+          )
+        "
+        data-name="Purple"
+        class="ui-link"
+        #myAnchor
+        >Purple</a
+      ><a
+        style="background-color: #43235f; color: #ffffff"
+        (click)="
+          pipinColor(
+            '#43235f',
+            ' brightness(0) saturate(100%) invert(15%) sepia(14%) saturate(5774%) hue-rotate(245deg) brightness(96%) contrast(95%)'
+          )
+        "
+        data-name="Dk-Purple"
+        class="ui-link"
+        #myAnchor
+        >Dark Purple</a
+      ><a
+        style="background-color: #a98c3d; color: #ffffff"
+        (click)="
+          pipinColor(
+            '#a98c3d',
+            ' brightness(0) saturate(100%) invert(48%) sepia(35%) saturate(711%) hue-rotate(6deg) brightness(110%) contrast(82%)'
+          )
+        "
+        data-name="Old-Gold"
+        class="ui-link"
+        #myAnchor
+        >Old Gold</a
+      ><a
+        style="background-color: #cfae7b; color: #ffffff"
+        (click)="
+          pipinColor(
+            '#cfae7b',
+            ' brightness(0) saturate(100%) invert(79%) sepia(47%) saturate(320%) hue-rotate(349deg) brightness(85%) contrast(90%)'
+          )
+        "
+        data-name="Vegas-Gold"
+        class="ui-link"
+        #myAnchor
+        >Vegas Gold</a
+      ><a
+        style="background-color: #cfc393; color: #ffffff"
+        (click)="
+          pipinColor(
+            '#cfc393',
+            ' brightness(0) saturate(100%) invert(85%) sepia(6%) saturate(1686%) hue-rotate(11deg) brightness(96%) contrast(81%)'
+          )
+        "
+        class="lesspad ui-link"
+        #myAnchor
+        data-name="Vegas-Gold-Pitt"
+        >Vegas Gold (Light)</a
+      ><a
+        style="background-color: #e2d0a6; color: #000000"
+        (click)="
+          pipinColor(
+            '#e2d0a6',
+            ' brightness(0) saturate(100%) invert(85%) sepia(36%) saturate(239%) hue-rotate(1deg) brightness(94%) contrast(89%)'
+          )
+        "
+        data-name="Neutral"
+        class="ui-link"
+        #myAnchor
+        >Neutral</a
+      ><a
+        style="background-color: #b07c57; color: #ffffff"
+        (click)="
+          pipinColor(
+            '#b07c57',
+            ' brightness(0) saturate(100%) invert(61%) sepia(10%) saturate(1687%) hue-rotate(342deg) brightness(83%) contrast(88%)'
+          )
+        "
+        data-name="Light-Brown"
+        class="ui-link"
+        #myAnchor
+        >Light Brown</a
+      ><a
+        style="background-color: #753d29; color: #ffffff"
+        (click)="
+          pipinColor(
+            '#753d29',
+            ' brightness(0) saturate(100%) invert(25%) sepia(11%) saturate(3842%) hue-rotate(332deg) brightness(89%) contrast(82%)'
+          )
+        "
+        data-name="Brown"
+        class="ui-link"
+        #myAnchor
+        >Brown</a
+      ><a
+        style="background-color: #4b3d2a; color: #ffffff"
+        (click)="
+          pipinColor(
+            '#4b3d2a',
+            ' brightness(0) saturate(100%) invert(23%) sepia(20%) saturate(768%) hue-rotate(355deg) brightness(93%) contrast(92%)'
+          )
+        "
+        data-name="Dark-Brown"
+        class="ui-link"
+        #myAnchor
+        >Dark Brown</a
+      ><a
+        style="background-color: #ed80a8; color: #ffffff"
+        (click)="
+          pipinColor(
+            '#ed80a8',
+            ' brightness(0) saturate(100%) invert(87%) sepia(21%) saturate(6603%) hue-rotate(292deg) brightness(95%) contrast(95%)'
+          )
+        "
+        data-name="Pink"
+        class="ui-link"
+        #myAnchor
+        >Pink</a
+      ><a
+        style="background-color: #d50071; color: #ffffff"
+        (click)="
+          pipinColor(
+            '#d50071',
+            ' brightness(0) saturate(100%) invert(16%) sepia(60%) saturate(5776%) hue-rotate(316deg) brightness(84%) contrast(113%)'
+          )
+        "
+        data-name="Fuchsia"
+        class="ui-link"
+        #myAnchor
+        >Hot Pink</a
+      ><a
+        style="background-color: #b94197; color: #ffffff"
+        (click)="
+          pipinColor(
+            '#b94197',
+            ' brightness(0) saturate(100%) invert(38%) sepia(35%) saturate(1140%) hue-rotate(265deg) brightness(92%) contrast(97%)'
+          )
+        "
+        data-name="Magenta"
+        class="ui-link"
+        #myAnchor
+        >Magenta</a
+      >
+    </div>
+  </div>
+
+  <!-- // thigh color  -->
+  <div class="col-8 column mx-2 col3" [style.display]="inner_thigh_color">
+    <div id="clrList" class="flex">
+      <a
+        style="background-color: #000000"
+        (click)="innerThiColor('#000000', 'brightness(0) saturate(100%)')"
+        data-name="Black"
+        class="ui-link"
+        #myAnchor
+        >Black</a
+      ><a
+        style="background-color: #ffffff; color: #000000"
+        (click)="
+          innerThiColor(
+            '#ffffff',
+            'brightness(0) saturate(100%) invert(92%) sepia(47%) saturate(17%) hue-rotate(296deg) brightness(107%) contrast(100%)'
+          )
+        "
+        data-name="White"
+        class="ui-link"
+        #myAnchor
+        >White</a
+      ><a
+        style="background-color: #414042; color: #ffffff"
+        (click)="
+          innerThiColor(
+            '#939598',
+            ' brightness(96%) invert(37%) sepia(5%) saturate(169%) hue-rotate(182deg)  contrast(90%)'
+          )
+        "
+        data-name="Char-Gray"
+        class="ui-link"
+        #myAnchor
+        >Dark Gray</a
+      ><a
+        style="background-color: #939598; color: #ffffff"
+        (click)="
+          innerThiColor(
+            '#414042',
+            ' brightness(89%) invert(77%) sepia(6%) saturate(232%) hue-rotate(224deg)  contrast(86%)'
+          )
+        "
+        data-name="Gray"
+        class="ui-link"
+        #myAnchor
+        >Gray</a
+      ><a
+        style="background-color: #c7c8ca; color: #000000"
+        (click)="
+          innerThiColor(
+            '#c7c8ca',
+            ' brightness(99%) invert(18%) sepia(0%) saturate(2697%) hue-rotate(287deg)  contrast(88%)'
+          )
+        "
+        data-name="Silver"
+        class="ui-link"
+        #myAnchor
+        >Silver</a
+      ><a
+        style="background-color: #cf0a2c; color: #ffffff"
+        (click)="
+          innerThiColor(
+            '#cf0a2c',
+            ' brightness(0) saturate(100%) invert(21%) sepia(58%) saturate(5843%) hue-rotate(334deg) brightness(74%) contrast(131%)'
+          )
+        "
+        data-name="Bright-Red"
+        class="ui-link"
+        #myAnchor
+        >Bright Red</a
+      ><a
+        style="background-color: #ac162c; color: #ffffff"
+        (click)="
+          innerThiColor(
+            '#ac162c',
+            ' brightness(0) saturate(100%) invert(24%) sepia(40%) saturate(3446%) hue-rotate(328deg) brightness(79%) contrast(112%)'
+          )
+        "
+        data-name="Red"
+        class="ui-link"
+        #myAnchor
+        >Red</a
+      ><a
+        style="background-color: #7a232e; color: #ffffff"
+        (click)="
+          innerThiColor(
+            '#7a232e',
+            ' brightness(0) saturate(100%) invert(15%) sepia(26%) saturate(5403%) hue-rotate(331deg) brightness(95%) contrast(89%)'
+          )
+        "
+        data-name="Maroon"
+        class="ui-link"
+        #myAnchor
+        >Maroon</a
+      ><a
+        style="background-color: #6a1b32; color: #ffffff"
+        (click)="
+          innerThiColor(
+            '#6a1b32',
+            ' brightness(0) saturate(100%) invert(12%) sepia(69%) saturate(2082%) hue-rotate(318deg) brightness(100%) contrast(93%)'
+          )
+        "
+        data-name="Dark-Maroon"
+        class="ui-link"
+        #myAnchor
+        >Dark Maroon</a
+      ><a
+        style="background-color: #a41f35; color: #ffffff"
+        (click)="
+          innerThiColor(
+            '#a41f35',
+            ' brightness(0) saturate(100%) invert(16%) sepia(60%) saturate(3578%) hue-rotate(334deg) brightness(91%) contrast(93%)'
+          )
+        "
+        data-name="Cardinal-Red"
+        class="ui-link"
+        #myAnchor
+        >Cardinal Red</a
+      ><a
+        style="background-color: #c12033; color: #ffffff"
+        (click)="
+          innerThiColor(
+            '#c12033',
+            ' brightness(0) saturate(100%) invert(18%) sepia(60%) saturate(2494%) hue-rotate(331deg) brightness(113%) contrast(105%)'
+          )
+        "
+        class="lesspad ui-link"
+        #myAnchor
+        data-name="Scarlet-Red"
+        >Scarlet Red (Ohio State)</a
+      ><a
+        style="background-color: #ef3824; color: #ffffff"
+        (click)="
+          innerThiColor(
+            '#ef3824',
+            ' brightness(0) saturate(100%) invert(27%) sepia(81%) saturate(4940%) hue-rotate(351deg) brightness(108%) contrast(87%)'
+          )
+        "
+        data-name="RedOrange"
+        class="ui-link"
+        #myAnchor
+        >Red Orange</a
+      ><a
+        style="background-color: #ff4717; color: #ffffff"
+        (click)="
+          innerThiColor(
+            '#ff4717',
+            ' brightness(0) saturate(100%) invert(35%) sepia(69%) saturate(3651%) hue-rotate(351deg) brightness(107%) contrast(103%)'
+          )
+        "
+        data-name="Orange"
+        class="ui-link"
+        #myAnchor
+        >Bright Orange</a
+      ><a
+        style="background-color: #ff8300; color: #ffffff"
+        (click)="
+          innerThiColor(
+            '#ff8300',
+            ' brightness(0) saturate(100%) invert(57%) sepia(93%) saturate(2608%) hue-rotate(359deg) brightness(101%) contrast(107%)'
+          )
+        "
+        data-name="NewOrange"
+        class="ui-link"
+        #myAnchor
+        >Orange</a
+      ><a
+        style="background-color: #d15e14; color: #ffffff"
+        (click)="
+          innerThiColor(
+            '#d15e14',
+            ' brightness(0) saturate(100%) invert(37%) sepia(93%) saturate(865%) hue-rotate(354deg) brightness(94%) contrast(92%)'
+          )
+        "
+        class="lesspad ui-link"
+        #myAnchor
+        data-name="Texas-Orange"
+        >Burnt Orange (Texas Orange)</a
+      ><a
+        style="background-color: #ece83a; color: #000000"
+        (click)="
+          innerThiColor(
+            '#ece83a',
+            ' brightness(0) saturate(100%) invert(91%) sepia(45%) saturate(751%) hue-rotate(356deg) brightness(96%) contrast(92%)'
+          )
+        "
+        data-name="NeonYellow"
+        class="ui-link"
+        #myAnchor
+        >Neon Yellow</a
+      ><a
+        style="background-color: #ffdd00; color: #000000"
+        (click)="
+          innerThiColor(
+            '#ffdd00',
+            ' brightness(0) saturate(100%) invert(71%) sepia(94%) saturate(559%) hue-rotate(360deg) brightness(107%) contrast(103%)'
+          )
+        "
+        data-name="Yellow"
+        class="ui-link"
+        #myAnchor
+        >Yellow</a
+      ><a
+        style="background-color: #ffc627; color: #ffffff"
+        (click)="
+          innerThiColor(
+            '#ffc627',
+            ' brightness(0) saturate(100%) invert(84%) sepia(93%) saturate(2984%) hue-rotate(327deg) brightness(98%) contrast(105%)'
+          )
+        "
+        data-name="Athletic-Gold"
+        class="ui-link"
+        #myAnchor
+        >Athletic Gold</a
+      ><a
+        style="background-color: #eba900; color: #ffffff"
+        (click)="
+          innerThiColor(
+            '#eba900',
+            ' brightness(0) saturate(100%) invert(50%) sepia(92%) saturate(604%) hue-rotate(11deg) brightness(108%) contrast(101%)'
+          )
+        "
+        data-name="Athletic-Gold-Dark"
+        class="ui-link"
+        #myAnchor
+        >Athletic Gold (Dark)</a
+      ><a
+        style="background-color: #77bc1f; color: #ffffff"
+        (click)="
+          innerThiColor(
+            '#77bc1f',
+            ' brightness(0) saturate(100%) invert(77%) sepia(19%) saturate(5576%) hue-rotate(40deg) brightness(95%) contrast(76%)'
+          )
+        "
+        data-name="Bright-Green"
+        class="ui-link"
+        #myAnchor
+        >Bright Green</a
+      ><a
+        style="background-color: #50b848; color: #ffffff"
+        (click)="
+          innerThiColor(
+            '#50b848',
+            ' brightness(0) saturate(100%) invert(63%) sepia(40%) saturate(726%) hue-rotate(68deg) brightness(91%) contrast(82%)'
+          )
+        "
+        data-name="Grass-Green"
+        class="ui-link"
+        #myAnchor
+        >Grass Green</a
+      ><a
+        style="background-color: #00833e; color: #ffffff"
+        (click)="
+          innerThiColor(
+            '#00833e',
+            ' brightness(0) saturate(100%) invert(32%) sepia(98%) saturate(764%) hue-rotate(111deg) brightness(91%) contrast(101%)'
+          )
+        "
+        data-name="Kelly-Green"
+        class="ui-link"
+        #myAnchor
+        >Kelly Green</a
+      ><a
+        style="background-color: #0e553f; color: #ffffff"
+        (click)="
+          innerThiColor(
+            '#0e553f',
+            ' brightness(0) saturate(100%) invert(22%) sepia(83%) saturate(420%) hue-rotate(110deg) brightness(96%) contrast(93%)'
+          )
+        "
+        data-name="Forest-Green"
+        class="ui-link"
+        #myAnchor
+        >Forest Green</a
+      ><a
+        style="background-color: #124734; color: #ffffff"
+        (click)="
+          innerThiColor(
+            '#124734',
+            ' brightness(0) saturate(100%) invert(20%) sepia(49%) saturate(601%) hue-rotate(107deg) brightness(94%) contrast(93%)'
+          )
+        "
+        data-name="Hunter-Green"
+        class="ui-link"
+        #myAnchor
+        >Hunter Green</a
+      ><a
+        style="background-color: #4e5a30; color: #ffffff"
+        (click)="
+          innerThiColor(
+            '#4e5a30',
+            ' brightness(0) saturate(100%) invert(30%) sepia(52%) saturate(350%) hue-rotate(36deg) brightness(94%) contrast(91%)'
+          )
+        "
+        data-name="Military-Green"
+        class="ui-link"
+        #myAnchor
+        >Army Green</a
+      ><a
+        style="background-color: #00665e; color: #ffffff"
+        (click)="
+          innerThiColor(
+            '#00665e',
+            ' brightness(0) saturate(100%) invert(12%) sepia(91%) saturate(4703%) hue-rotate(171deg) brightness(98%) contrast(101%)'
+          )
+        "
+        data-name="Teal"
+        class="ui-link"
+        #myAnchor
+        >Teal</a
+      ><a
+        style="background-color: #00afaa; color: #ffffff"
+        (click)="
+          innerThiColor(
+            '#00afaa',
+            ' brightness(0) saturate(100%) invert(47%) sepia(88%) saturate(2890%) hue-rotate(148deg) brightness(98%) contrast(101%)'
+          )
+        "
+        data-name="Turquoise"
+        class="ui-link"
+        #myAnchor
+        >Turquoise</a
+      ><a
+        style="background-color: #6ecb98; color: #ffffff"
+        (click)="
+          innerThiColor(
+            '#6ecb98',
+            ' brightness(0) saturate(100%) invert(81%) sepia(22%) saturate(697%) hue-rotate(93deg) brightness(87%) contrast(89%)'
+          )
+        "
+        data-name="Sea-Green"
+        class="ui-link"
+        #myAnchor
+        >Sea Green</a
+      ><a
+        style="background-color: #8db8e9; color: #ffffff"
+        (click)="
+          innerThiColor(
+            '#8db8e9',
+            ' brightness(0) saturate(100%) invert(74%) sepia(12%) saturate(1117%) hue-rotate(174deg) brightness(93%) contrast(95%)'
+          )
+        "
+        data-name="Carolina-Blue"
+        class="ui-link"
+        #myAnchor
+        >Carolina Blue</a
+      ><a
+        style="background-color: #00a7e1; color: #ffffff"
+        (click)="
+          innerThiColor(
+            '#00a7e1',
+            ' brightness(0) saturate(100%) invert(64%) sepia(96%) saturate(4923%) hue-rotate(167deg) brightness(102%) contrast(101%)'
+          )
+        "
+        data-name="Cyan"
+        class="ui-link"
+        #myAnchor
+        >Cyan</a
+      ><a
+        style="background-color: #0082be; color: #ffffff"
+        (click)="
+          innerThiColor(
+            '#0082be',
+            ' brightness(0) saturate(100%) invert(31%) sepia(88%) saturate(2648%) hue-rotate(178deg) brightness(92%) contrast(102%)'
+          )
+        "
+        data-name="Bright-Blue"
+        class="ui-link"
+        #myAnchor
+        >Bright Blue</a
+      ><a
+        style="background-color: #0039a6; color: #ffffff"
+        (click)="
+          innerThiColor(
+            '#0039a6',
+            ' brightness(0) saturate(100%) invert(20%) sepia(26%) saturate(6893%) hue-rotate(211deg) brightness(86%) contrast(113%)'
+          )
+        "
+        data-name="Royal-Blue"
+        class="ui-link"
+        #myAnchor
+        >Royal Blue</a
+      ><a
+        style="background-color: #002d74; color: #ffffff"
+        (click)="
+          innerThiColor(
+            '#002d74',
+            ' brightness(0) saturate(100%) invert(11%) sepia(68%) saturate(3764%) hue-rotate(209deg) brightness(96%) contrast(105%)'
+          )
+        "
+        data-name="Royal-Blue-Dark"
+        class="ui-link"
+        #myAnchor
+        >Royal Blue (Dark)</a
+      ><a
+        style="background-color: #002144; color: #ffffff"
+        (click)="
+          innerThiColor(
+            '#002144',
+            ' brightness(0) saturate(100%) invert(10%) sepia(65%) saturate(1875%) hue-rotate(187deg) brightness(99%) contrast(106%)'
+          )
+        "
+        data-name="Navy-Blue"
+        class="ui-link"
+        #myAnchor
+        >Navy Blue</a
+      ><a
+        style="background-color: #333e48; color: #ffffff"
+        (click)="
+          innerThiColor(
+            '#333e48',
+            ' brightness(0) saturate(100%) invert(18%) sepia(13%) saturate(938%) hue-rotate(167deg) brightness(99%) contrast(84%)'
+          )
+        "
+        data-name="Gunmetal-Blue"
+        class="ui-link"
+        #myAnchor
+        >Gunmetal Blue</a
+      ><a
+        style="background-color: #9164cc; color: #ffffff"
+        (click)="
+          innerThiColor(
+            '#9164cc',
+            ' brightness(0) saturate(100%) invert(59%) sepia(40%) saturate(4391%) hue-rotate(226deg) brightness(82%) contrast(93%)'
+          )
+        "
+        data-name="Light-Purple"
+        class="ui-link"
+        #myAnchor
+        >Light Purple</a
+      ><a
+        style="background-color: #5b2d82; color: #ffffff"
+        (click)="
+          innerThiColor(
+            '#5b2d82',
+            ' brightness(0) saturate(100%) invert(22%) sepia(28%) saturate(3010%) hue-rotate(246deg) brightness(92%) contrast(96%)'
+          )
+        "
+        data-name="Purple"
+        class="ui-link"
+        #myAnchor
+        >Purple</a
+      ><a
+        style="background-color: #43235f; color: #ffffff"
+        (click)="
+          innerThiColor(
+            '#43235f',
+            ' brightness(0) saturate(100%) invert(15%) sepia(14%) saturate(5774%) hue-rotate(245deg) brightness(96%) contrast(95%)'
+          )
+        "
+        data-name="Dk-Purple"
+        class="ui-link"
+        #myAnchor
+        >Dark Purple</a
+      ><a
+        style="background-color: #a98c3d; color: #ffffff"
+        (click)="
+          innerThiColor(
+            '#a98c3d',
+            ' brightness(0) saturate(100%) invert(48%) sepia(35%) saturate(711%) hue-rotate(6deg) brightness(110%) contrast(82%)'
+          )
+        "
+        data-name="Old-Gold"
+        class="ui-link"
+        #myAnchor
+        >Old Gold</a
+      ><a
+        style="background-color: #cfae7b; color: #ffffff"
+        (click)="
+          innerThiColor(
+            '#cfae7b',
+            ' brightness(0) saturate(100%) invert(79%) sepia(47%) saturate(320%) hue-rotate(349deg) brightness(85%) contrast(90%)'
+          )
+        "
+        data-name="Vegas-Gold"
+        class="ui-link"
+        #myAnchor
+        >Vegas Gold</a
+      ><a
+        style="background-color: #cfc393; color: #ffffff"
+        (click)="
+          innerThiColor(
+            '#cfc393',
+            ' brightness(0) saturate(100%) invert(85%) sepia(6%) saturate(1686%) hue-rotate(11deg) brightness(96%) contrast(81%)'
+          )
+        "
+        class="lesspad ui-link"
+        #myAnchor
+        data-name="Vegas-Gold-Pitt"
+        >Vegas Gold (Light)</a
+      ><a
+        style="background-color: #e2d0a6; color: #000000"
+        (click)="
+          innerThiColor(
+            '#e2d0a6',
+            ' brightness(0) saturate(100%) invert(85%) sepia(36%) saturate(239%) hue-rotate(1deg) brightness(94%) contrast(89%)'
+          )
+        "
+        data-name="Neutral"
+        class="ui-link"
+        #myAnchor
+        >Neutral</a
+      ><a
+        style="background-color: #b07c57; color: #ffffff"
+        (click)="
+          innerThiColor(
+            '#b07c57',
+            ' brightness(0) saturate(100%) invert(61%) sepia(10%) saturate(1687%) hue-rotate(342deg) brightness(83%) contrast(88%)'
+          )
+        "
+        data-name="Light-Brown"
+        class="ui-link"
+        #myAnchor
+        >Light Brown</a
+      ><a
+        style="background-color: #753d29; color: #ffffff"
+        (click)="
+          innerThiColor(
+            '#753d29',
+            ' brightness(0) saturate(100%) invert(25%) sepia(11%) saturate(3842%) hue-rotate(332deg) brightness(89%) contrast(82%)'
+          )
+        "
+        data-name="Brown"
+        class="ui-link"
+        #myAnchor
+        >Brown</a
+      ><a
+        style="background-color: #4b3d2a; color: #ffffff"
+        (click)="
+          innerThiColor(
+            '#4b3d2a',
+            ' brightness(0) saturate(100%) invert(23%) sepia(20%) saturate(768%) hue-rotate(355deg) brightness(93%) contrast(92%)'
+          )
+        "
+        data-name="Dark-Brown"
+        class="ui-link"
+        #myAnchor
+        >Dark Brown</a
+      ><a
+        style="background-color: #ed80a8; color: #ffffff"
+        (click)="
+          innerThiColor(
+            '#ed80a8',
+            ' brightness(0) saturate(100%) invert(87%) sepia(21%) saturate(6603%) hue-rotate(292deg) brightness(95%) contrast(95%)'
+          )
+        "
+        data-name="Pink"
+        class="ui-link"
+        #myAnchor
+        >Pink</a
+      ><a
+        style="background-color: #d50071; color: #ffffff"
+        (click)="
+          innerThiColor(
+            '#d50071',
+            ' brightness(0) saturate(100%) invert(16%) sepia(60%) saturate(5776%) hue-rotate(316deg) brightness(84%) contrast(113%)'
+          )
+        "
+        data-name="Fuchsia"
+        class="ui-link"
+        #myAnchor
+        >Hot Pink</a
+      ><a
+        style="background-color: #b94197; color: #ffffff"
+        (click)="
+          innerThiColor(
+            '#b94197',
+            ' brightness(0) saturate(100%) invert(38%) sepia(35%) saturate(1140%) hue-rotate(265deg) brightness(92%) contrast(97%)'
+          )
+        "
+        data-name="Magenta"
+        class="ui-link"
+        #myAnchor
+        >Magenta</a
+      >
+    </div>
+  </div>
+</div>
